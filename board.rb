@@ -28,7 +28,7 @@
 
   <meta name="viewport" content="width=device-width">
   
-  <title>projet_morpion/app.rb at master · FatoumaKara/projet_morpion</title>
+  <title>projet_morpion/board.rb at master · FatoumaKara/projet_morpion</title>
     <meta name="description" content="Jeu morpion. Contribute to FatoumaKara/projet_morpion development by creating an account on GitHub.">
     <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="GitHub">
   <link rel="fluid-icon" href="https://github.com/fluidicon.png" title="GitHub">
@@ -39,10 +39,10 @@
     <meta property="og:image" content="https://avatars1.githubusercontent.com/u/67610410?s=400&amp;v=4" /><meta property="og:site_name" content="GitHub" /><meta property="og:type" content="object" /><meta property="og:title" content="FatoumaKara/projet_morpion" /><meta property="og:url" content="https://github.com/FatoumaKara/projet_morpion" /><meta property="og:description" content="Jeu morpion. Contribute to FatoumaKara/projet_morpion development by creating an account on GitHub." />
 
   <link rel="assets" href="https://github.githubassets.com/">
-    <link rel="shared-web-socket" href="wss://alive.github.com/_sockets/u/55764727/ws?session=eyJ2IjoiVjMiLCJ1Ijo1NTc2NDcyNywicyI6NTU1Mjc0NDY1LCJjIjoyNzg3Mzg1ODcxLCJ0IjoxNTk1NTQzMjg2fQ==--8c27e8686370d2dbf2f53def28c36d6b1336af6e00cd761e229c87f7b2045f7f" data-refresh-url="/_ws">
+    <link rel="shared-web-socket" href="wss://alive.github.com/_sockets/u/55764727/ws?session=eyJ2IjoiVjMiLCJ1Ijo1NTc2NDcyNywicyI6NTU1Mjc0NDY1LCJjIjoyNjAyMTYxMTYzLCJ0IjoxNTk1NTQzMzA0fQ==--eadea5682362afdf6cc3efa7d1e39b146a4216b1b7908660da49b565a3e3a4ee" data-refresh-url="/_ws">
   <link rel="sudo-modal" href="/sessions/sudo_modal">
 
-  <meta name="request-id" content="E46D:60BD:4C34FAF:6958887:5F1A0EE9" data-pjax-transient="true" /><meta name="html-safe-nonce" content="201e5875c7eab126413941bc92c5a30c25a96729" data-pjax-transient="true" /><meta name="visitor-payload" content="eyJyZWZlcnJlciI6Imh0dHBzOi8vZ2l0aHViLmNvbS9GYXRvdW1hS2FyYS9wcm9qZXRfbW9ycGlvbiIsInJlcXVlc3RfaWQiOiJFNDZEOjYwQkQ6NEMzNEZBRjo2OTU4ODg3OjVGMUEwRUU5IiwidmlzaXRvcl9pZCI6IjM5NjE0NDIxNDkwOTM1NjMxNzMiLCJyZWdpb25fZWRnZSI6ImFtcyIsInJlZ2lvbl9yZW5kZXIiOiJpYWQifQ==" data-pjax-transient="true" /><meta name="visitor-hmac" content="4543db6559f2adf9652987f0c036fc508cf05bd02e798990834f830aabcbe245" data-pjax-transient="true" />
+  <meta name="request-id" content="E473:6AC3:D93FD8D:13C4026D:5F1A0F00" data-pjax-transient="true" /><meta name="html-safe-nonce" content="201e5875c7eab126413941bc92c5a30c25a96729" data-pjax-transient="true" /><meta name="visitor-payload" content="eyJyZWZlcnJlciI6Imh0dHBzOi8vZ2l0aHViLmNvbS9GYXRvdW1hS2FyYS9wcm9qZXRfbW9ycGlvbi90cmVlL21hc3Rlci9saWIiLCJyZXF1ZXN0X2lkIjoiRTQ3Mzo2QUMzOkQ5M0ZEOEQ6MTNDNDAyNkQ6NUYxQTBGMDAiLCJ2aXNpdG9yX2lkIjoiMzk2MTQ0MjE0OTA5MzU2MzE3MyIsInJlZ2lvbl9lZGdlIjoiYW1zIiwicmVnaW9uX3JlbmRlciI6ImlhZCJ9" data-pjax-transient="true" /><meta name="visitor-hmac" content="1014f9d80ff5ee55bf70c04d43ee17dcaed498b5eb0a27c61e84aa7cee6d136a" data-pjax-transient="true" />
 
     <meta name="hovercard-subject-tag" content="repository:281940588" data-pjax-transient>
 
@@ -85,7 +85,7 @@
 
       <meta name="expected-hostname" content="github.com">
 
-      <meta name="js-proxy-site-detection-payload" content="MjExYTlmNTE0NWU1MmU2OGRkNDczOWRlNWFhMTJiODU2Y2Y4MGUxNDAxNDcxNTYxNTgzMGRhMDA2Y2U0MTJhOXx7InJlbW90ZV9hZGRyZXNzIjoiOTIuOTAuMTc1LjI0MCIsInJlcXVlc3RfaWQiOiJFNDZEOjYwQkQ6NEMzNEZBRjo2OTU4ODg3OjVGMUEwRUU5IiwidGltZXN0YW1wIjoxNTk1NTQzMjg2LCJob3N0IjoiZ2l0aHViLmNvbSJ9">
+      <meta name="js-proxy-site-detection-payload" content="MDQzYzI5MTliMTA0YjIwNDRjMDEzNWRjY2I5YjhiZTEyZWM3MzFkNjg4YWZhZDY3ZGMxYjA4MjdkMjhhZDAyOHx7InJlbW90ZV9hZGRyZXNzIjoiOTIuOTAuMTc1LjI0MCIsInJlcXVlc3RfaWQiOiJFNDczOjZBQzM6RDkzRkQ4RDoxM0M0MDI2RDo1RjFBMEYwMCIsInRpbWVzdGFtcCI6MTU5NTU0MzMwNCwiaG9zdCI6ImdpdGh1Yi5jb20ifQ==">
 
     <meta name="enabled-features" content="MARKETPLACE_PENDING_INSTALLATIONS,ACTIONS_DEFAULT_BRANCH_WARNING">
 
@@ -99,7 +99,7 @@
   <meta name="octolytics-dimension-user_id" content="67610410" /><meta name="octolytics-dimension-user_login" content="FatoumaKara" /><meta name="octolytics-dimension-repository_id" content="281940588" /><meta name="octolytics-dimension-repository_nwo" content="FatoumaKara/projet_morpion" /><meta name="octolytics-dimension-repository_public" content="true" /><meta name="octolytics-dimension-repository_is_fork" content="false" /><meta name="octolytics-dimension-repository_network_root_id" content="281940588" /><meta name="octolytics-dimension-repository_network_root_nwo" content="FatoumaKara/projet_morpion" /><meta name="octolytics-dimension-repository_explore_github_marketplace_ci_cta_shown" content="false" />
 
 
-    <link rel="canonical" href="https://github.com/FatoumaKara/projet_morpion/blob/master/app.rb" data-pjax-transient>
+    <link rel="canonical" href="https://github.com/FatoumaKara/projet_morpion/blob/master/lib/board.rb" data-pjax-transient>
 
 
   <meta name="browser-stats-url" content="https://api.github.com/_private/browser/stats">
@@ -173,7 +173,7 @@
           spellcheck="false"
           autocomplete="off"
           >
-          <input type="hidden" value="EpqO/z8NdHZ9iEwNIct8unV9cq7Q5uK/pqtukNMoIdfjU4pKTKojq6+Qzl+dL9VBSaCVaMBZIxurKBT08s47yg==" data-csrf="true" class="js-data-jump-to-suggestions-path-csrf" />
+          <input type="hidden" value="ZSwpdzo/eRTdcBsBkthBqnH9YQrZR80dEOoyYKDmDjmU5S3CSZguyQ9omVMuPOhRTSCGzMn4DLkdaUgEgQAUJA==" data-csrf="true" class="js-data-jump-to-suggestions-path-csrf" />
           <input type="hidden" class="js-site-search-type-field" name="type" >
             <img src="https://github.githubassets.com/images/search-key-slash.svg" alt="" class="mr-2 header-search-key-slash">
 
@@ -324,7 +324,7 @@
       <img class="avatar avatar-user" src="https://avatars2.githubusercontent.com/u/55764727?s=40&amp;v=4" width="20" height="20" alt="@mako666-star" />
       mako666-star
 </a>
-    <!-- '"` --><!-- </textarea></xmp> --></option></form><form action="/logout" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="V67gELnn3NIN7gLhqqOgLTOWkSM/jpq6GK93AJ2BIcJBXeuqAvg0sqHtyoVcDut2T3lvjxP2OfuMDQebvyk0oQ==" />
+    <!-- '"` --><!-- </textarea></xmp> --></option></form><form action="/logout" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="W3jl0qhNknG+TZkQim3a08A3HlPLbTLBZKhoXBR0bThNi+5oE1J6ERJOUXR8wJGIvNjg/+cVkYDwChjHNtx4Ww==" />
       <button type="submit" class="Header-link mr-0 mr-md-3 py-2 py-md-3 border-top border-md-top-0 border-white-fade-15 d-md-none btn-link d-block width-full text-left" data-ga-click="Header, sign out, icon:logout" style="padding-left: 2px;">
         <svg class="octicon octicon-sign-out v-align-middle" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M2 2.75C2 1.784 2.784 1 3.75 1h2.5a.75.75 0 010 1.5h-2.5a.25.25 0 00-.25.25v10.5c0 .138.112.25.25.25h2.5a.75.75 0 010 1.5h-2.5A1.75 1.75 0 012 13.25V2.75zm10.44 4.5H6.75a.75.75 0 000 1.5h5.69l-1.97 1.97a.75.75 0 101.06 1.06l3.25-3.25a.75.75 0 000-1.06l-3.25-3.25a.75.75 0 10-1.06 1.06l1.97 1.97z"></path></svg>
         Sign out
@@ -343,7 +343,7 @@
 
   <div class="Header-item mr-0 mr-md-3 flex-order-1 flex-md-order-none">
     
-    <a aria-label="You have no unread notifications" class="Header-link notification-indicator position-relative tooltipped tooltipped-sw js-socket-channel js-notification-indicator" data-hotkey="g n" data-ga-click="Header, go to notifications, icon:read" data-channel="eyJjIjoibm90aWZpY2F0aW9uLWNoYW5nZWQ6NTU3NjQ3MjciLCJ0IjoxNTk1NTQzMjg2fQ==--596e63bb878acc8138df0820edb9caa9899bd6c6b64c7c04e52591bd68740b05" href="/notifications">
+    <a aria-label="You have no unread notifications" class="Header-link notification-indicator position-relative tooltipped tooltipped-sw js-socket-channel js-notification-indicator" data-hotkey="g n" data-ga-click="Header, go to notifications, icon:read" data-channel="eyJjIjoibm90aWZpY2F0aW9uLWNoYW5nZWQ6NTU3NjQ3MjciLCJ0IjoxNTk1NTQzMzA0fQ==--c37006dae015d1a6f19b0463529c117f448f08dd5cffb5ccddb61a6ae65b16c7" href="/notifications">
         <span class="js-indicator-modifier mail-status "></span>
         <svg class="octicon octicon-bell" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M8 16a2 2 0 001.985-1.75c.017-.137-.097-.25-.235-.25h-3.5c-.138 0-.252.113-.235.25A2 2 0 008 16z"></path><path fill-rule="evenodd" d="M8 1.5A3.5 3.5 0 004.5 5v2.947c0 .346-.102.683-.294.97l-1.703 2.556a.018.018 0 00-.003.01l.001.006c0 .002.002.004.004.006a.017.017 0 00.006.004l.007.001h10.964l.007-.001a.016.016 0 00.006-.004.016.016 0 00.004-.006l.001-.007a.017.017 0 00-.003-.01l-1.703-2.554a1.75 1.75 0 01-.294-.97V5A3.5 3.5 0 008 1.5zM3 5a5 5 0 0110 0v2.947c0 .05.015.098.042.139l1.703 2.555A1.518 1.518 0 0113.482 13H2.518a1.518 1.518 0 01-1.263-2.36l1.703-2.554A.25.25 0 003 7.947V5z"></path></svg>
 </a>
@@ -417,7 +417,7 @@
   data-team-hovercards-enabled>
   <details class="js-user-status-details details-reset details-overlay details-overlay-dark">
     <summary class="btn-link btn-block link-gray no-underline js-toggle-user-status-edit toggle-user-status-edit "
-      role="menuitem" data-hydro-click="{&quot;event_type&quot;:&quot;user_profile.click&quot;,&quot;payload&quot;:{&quot;profile_user_id&quot;:67610410,&quot;target&quot;:&quot;EDIT_USER_STATUS&quot;,&quot;user_id&quot;:55764727,&quot;originating_url&quot;:&quot;https://github.com/FatoumaKara/projet_morpion/blob/master/app.rb&quot;}}" data-hydro-click-hmac="fe6e90ec609e530fd0c9292c9272b96a2ed3c896563db72bc570f2ca633b2118">
+      role="menuitem" data-hydro-click="{&quot;event_type&quot;:&quot;user_profile.click&quot;,&quot;payload&quot;:{&quot;profile_user_id&quot;:67610410,&quot;target&quot;:&quot;EDIT_USER_STATUS&quot;,&quot;user_id&quot;:55764727,&quot;originating_url&quot;:&quot;https://github.com/FatoumaKara/projet_morpion/blob/master/lib/board.rb&quot;}}" data-hydro-click-hmac="e846dddf197cb708fa412adc3307811dae9139a727505c96756a6762649019bc">
       <div class="d-flex flex-items-center flex-items-stretch">
         <div class="f6 lh-condensed user-status-header d-flex user-status-emoji-only-header circle">
           <div class="user-status-emoji-container flex-shrink-0 mr-2 d-flex flex-items-center flex-justify-center lh-condensed-ultra v-align-bottom">
@@ -435,7 +435,7 @@
       </div>
     </summary>
     <details-dialog class="details-dialog rounded-1 anim-fade-in fast Box Box--overlay" role="dialog" tabindex="-1">
-      <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="position-relative flex-auto js-user-status-form" action="/users/status?circle=0&amp;compact=1&amp;link_mentions=0&amp;truncate=1" accept-charset="UTF-8" method="post"><input type="hidden" name="_method" value="put" /><input type="hidden" name="authenticity_token" value="lhwXzR9mfgBSxlkGGS6KfkUj8zWBf5AeYIi0lYGY3pqpUPJpXSsAH9LXpdYC4Xex+gos1XIBp/bPtZBzD/Ihdw==" />
+      <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="position-relative flex-auto js-user-status-form" action="/users/status?circle=0&amp;compact=1&amp;link_mentions=0&amp;truncate=1" accept-charset="UTF-8" method="post"><input type="hidden" name="_method" value="put" /><input type="hidden" name="authenticity_token" value="N4MxKTUcJfwTpMS0B1n+F8CintHbHHMRYJqhElXoV8UIz9SNd1Fb45O1OGQclgPYf4tBMShiRPnPp4X024KoKA==" />
         <div class="Box-header bg-gray border-bottom p-3">
           <button class="Box-btn-octicon js-toggle-user-status-edit btn-octicon float-right" type="reset" aria-label="Close dialog" data-close-dialog>
             <svg class="octicon octicon-x" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M3.72 3.72a.75.75 0 011.06 0L8 6.94l3.22-3.22a.75.75 0 111.06 1.06L9.06 8l3.22 3.22a.75.75 0 11-1.06 1.06L8 9.06l-3.22 3.22a.75.75 0 01-1.06-1.06L6.94 8 3.72 4.78a.75.75 0 010-1.06z"></path></svg>
@@ -553,17 +553,17 @@
       </li>
       <li class="dropdown-divider" role="none"></li>
         <li>
-          <button type="button" class="btn-link dropdown-item ws-normal js-user-status-expire-button" title="in 30 minutes" value="2020-07-24T00:58:06+02:00">
+          <button type="button" class="btn-link dropdown-item ws-normal js-user-status-expire-button" title="in 30 minutes" value="2020-07-24T00:58:24+02:00">
             in 30 minutes
           </button>
         </li>
         <li>
-          <button type="button" class="btn-link dropdown-item ws-normal js-user-status-expire-button" title="in 1 hour" value="2020-07-24T01:28:06+02:00">
+          <button type="button" class="btn-link dropdown-item ws-normal js-user-status-expire-button" title="in 1 hour" value="2020-07-24T01:28:24+02:00">
             in 1 hour
           </button>
         </li>
         <li>
-          <button type="button" class="btn-link dropdown-item ws-normal js-user-status-expire-button" title="in 4 hours" value="2020-07-24T04:28:06+02:00">
+          <button type="button" class="btn-link dropdown-item ws-normal js-user-status-expire-button" title="in 4 hours" value="2020-07-24T04:28:24+02:00">
             in 4 hours
           </button>
         </li>
@@ -599,23 +599,23 @@
       </div>
       <div role="none" class="dropdown-divider"></div>
 
-    <a role="menuitem" class="dropdown-item" href="/mako666-star" data-ga-click="Header, go to profile, text:your profile" data-hydro-click="{&quot;event_type&quot;:&quot;global_header.user_menu_dropdown.click&quot;,&quot;payload&quot;:{&quot;request_url&quot;:&quot;https://github.com/FatoumaKara/projet_morpion/blob/master/app.rb&quot;,&quot;target&quot;:&quot;YOUR_PROFILE&quot;,&quot;originating_url&quot;:&quot;https://github.com/FatoumaKara/projet_morpion/blob/master/app.rb&quot;,&quot;user_id&quot;:55764727}}" data-hydro-click-hmac="ef007edbeb0a2c64c619fe6dd64964507a6ff0bf31c6acaeef7b64251f24c751" >Your profile</a>
+    <a role="menuitem" class="dropdown-item" href="/mako666-star" data-ga-click="Header, go to profile, text:your profile" data-hydro-click="{&quot;event_type&quot;:&quot;global_header.user_menu_dropdown.click&quot;,&quot;payload&quot;:{&quot;request_url&quot;:&quot;https://github.com/FatoumaKara/projet_morpion/blob/master/lib/board.rb&quot;,&quot;target&quot;:&quot;YOUR_PROFILE&quot;,&quot;originating_url&quot;:&quot;https://github.com/FatoumaKara/projet_morpion/blob/master/lib/board.rb&quot;,&quot;user_id&quot;:55764727}}" data-hydro-click-hmac="16f55278ed84dd68fbd2562e3d8c5a4288a48bb03f367e5e7e70625c936b3062" >Your profile</a>
 
-    <a role="menuitem" class="dropdown-item" href="/mako666-star?tab=repositories" data-ga-click="Header, go to repositories, text:your repositories" data-hydro-click="{&quot;event_type&quot;:&quot;global_header.user_menu_dropdown.click&quot;,&quot;payload&quot;:{&quot;request_url&quot;:&quot;https://github.com/FatoumaKara/projet_morpion/blob/master/app.rb&quot;,&quot;target&quot;:&quot;YOUR_REPOSITORIES&quot;,&quot;originating_url&quot;:&quot;https://github.com/FatoumaKara/projet_morpion/blob/master/app.rb&quot;,&quot;user_id&quot;:55764727}}" data-hydro-click-hmac="b90140014213e526c7234431d025b011ebf2bc3cbbe52d7ea8b95c85beef2767" >Your repositories</a>
-
-
-    <a role="menuitem" class="dropdown-item" href="/mako666-star?tab=projects" data-ga-click="Header, go to projects, text:your projects" data-hydro-click="{&quot;event_type&quot;:&quot;global_header.user_menu_dropdown.click&quot;,&quot;payload&quot;:{&quot;request_url&quot;:&quot;https://github.com/FatoumaKara/projet_morpion/blob/master/app.rb&quot;,&quot;target&quot;:&quot;YOUR_PROJECTS&quot;,&quot;originating_url&quot;:&quot;https://github.com/FatoumaKara/projet_morpion/blob/master/app.rb&quot;,&quot;user_id&quot;:55764727}}" data-hydro-click-hmac="d6a90603d684e36fe64a4985eec337495825001c8c8b8ec0ebd67c2b1e6bbd16" >Your projects</a>
+    <a role="menuitem" class="dropdown-item" href="/mako666-star?tab=repositories" data-ga-click="Header, go to repositories, text:your repositories" data-hydro-click="{&quot;event_type&quot;:&quot;global_header.user_menu_dropdown.click&quot;,&quot;payload&quot;:{&quot;request_url&quot;:&quot;https://github.com/FatoumaKara/projet_morpion/blob/master/lib/board.rb&quot;,&quot;target&quot;:&quot;YOUR_REPOSITORIES&quot;,&quot;originating_url&quot;:&quot;https://github.com/FatoumaKara/projet_morpion/blob/master/lib/board.rb&quot;,&quot;user_id&quot;:55764727}}" data-hydro-click-hmac="03f44b11f5daf5ffb54082c9160dc9f2f700a64fe6f142d833a5dc80d03d76e7" >Your repositories</a>
 
 
-    <a role="menuitem" class="dropdown-item" href="/mako666-star?tab=stars" data-ga-click="Header, go to starred repos, text:your stars" data-hydro-click="{&quot;event_type&quot;:&quot;global_header.user_menu_dropdown.click&quot;,&quot;payload&quot;:{&quot;request_url&quot;:&quot;https://github.com/FatoumaKara/projet_morpion/blob/master/app.rb&quot;,&quot;target&quot;:&quot;YOUR_STARS&quot;,&quot;originating_url&quot;:&quot;https://github.com/FatoumaKara/projet_morpion/blob/master/app.rb&quot;,&quot;user_id&quot;:55764727}}" data-hydro-click-hmac="921534e314493dd9343c7ec6b8bc4ab2a2de45f74deab39191f9443af8d76cc9" >Your stars</a>
-      <a role="menuitem" class="dropdown-item" href="https://gist.github.com/mine" data-ga-click="Header, your gists, text:your gists" data-hydro-click="{&quot;event_type&quot;:&quot;global_header.user_menu_dropdown.click&quot;,&quot;payload&quot;:{&quot;request_url&quot;:&quot;https://github.com/FatoumaKara/projet_morpion/blob/master/app.rb&quot;,&quot;target&quot;:&quot;YOUR_GISTS&quot;,&quot;originating_url&quot;:&quot;https://github.com/FatoumaKara/projet_morpion/blob/master/app.rb&quot;,&quot;user_id&quot;:55764727}}" data-hydro-click-hmac="bdad63c71f253fca6324cd8b1488ce12e6e8faf08e701d6326e836249c456b97" >Your gists</a>
+    <a role="menuitem" class="dropdown-item" href="/mako666-star?tab=projects" data-ga-click="Header, go to projects, text:your projects" data-hydro-click="{&quot;event_type&quot;:&quot;global_header.user_menu_dropdown.click&quot;,&quot;payload&quot;:{&quot;request_url&quot;:&quot;https://github.com/FatoumaKara/projet_morpion/blob/master/lib/board.rb&quot;,&quot;target&quot;:&quot;YOUR_PROJECTS&quot;,&quot;originating_url&quot;:&quot;https://github.com/FatoumaKara/projet_morpion/blob/master/lib/board.rb&quot;,&quot;user_id&quot;:55764727}}" data-hydro-click-hmac="4984382b40bd406cf796de3084968f49cea0f1b56a3781daec1446810a53bfa0" >Your projects</a>
+
+
+    <a role="menuitem" class="dropdown-item" href="/mako666-star?tab=stars" data-ga-click="Header, go to starred repos, text:your stars" data-hydro-click="{&quot;event_type&quot;:&quot;global_header.user_menu_dropdown.click&quot;,&quot;payload&quot;:{&quot;request_url&quot;:&quot;https://github.com/FatoumaKara/projet_morpion/blob/master/lib/board.rb&quot;,&quot;target&quot;:&quot;YOUR_STARS&quot;,&quot;originating_url&quot;:&quot;https://github.com/FatoumaKara/projet_morpion/blob/master/lib/board.rb&quot;,&quot;user_id&quot;:55764727}}" data-hydro-click-hmac="ae56973e5a9d7c5071bb3157593094d985d1f25cc76b971cffa516a2b22e1263" >Your stars</a>
+      <a role="menuitem" class="dropdown-item" href="https://gist.github.com/mine" data-ga-click="Header, your gists, text:your gists" data-hydro-click="{&quot;event_type&quot;:&quot;global_header.user_menu_dropdown.click&quot;,&quot;payload&quot;:{&quot;request_url&quot;:&quot;https://github.com/FatoumaKara/projet_morpion/blob/master/lib/board.rb&quot;,&quot;target&quot;:&quot;YOUR_GISTS&quot;,&quot;originating_url&quot;:&quot;https://github.com/FatoumaKara/projet_morpion/blob/master/lib/board.rb&quot;,&quot;user_id&quot;:55764727}}" data-hydro-click-hmac="7d74993336c580212f21d77dfaffc2b5f95966c847aa4b1b42218fbea7639225" >Your gists</a>
 
 
 
 
 
     <div role="none" class="dropdown-divider"></div>
-      <a role="menuitem" class="dropdown-item" href="/settings/billing" data-ga-click="Header, go to billing, text:upgrade" data-hydro-click="{&quot;event_type&quot;:&quot;global_header.user_menu_dropdown.click&quot;,&quot;payload&quot;:{&quot;request_url&quot;:&quot;https://github.com/FatoumaKara/projet_morpion/blob/master/app.rb&quot;,&quot;target&quot;:&quot;UPGRADE&quot;,&quot;originating_url&quot;:&quot;https://github.com/FatoumaKara/projet_morpion/blob/master/app.rb&quot;,&quot;user_id&quot;:55764727}}" data-hydro-click-hmac="d2d559f4b6c354bd360d47be4dc4f2617c630d5c30370ee41027bc1fa8d237f7" >Upgrade</a>
+      <a role="menuitem" class="dropdown-item" href="/settings/billing" data-ga-click="Header, go to billing, text:upgrade" data-hydro-click="{&quot;event_type&quot;:&quot;global_header.user_menu_dropdown.click&quot;,&quot;payload&quot;:{&quot;request_url&quot;:&quot;https://github.com/FatoumaKara/projet_morpion/blob/master/lib/board.rb&quot;,&quot;target&quot;:&quot;UPGRADE&quot;,&quot;originating_url&quot;:&quot;https://github.com/FatoumaKara/projet_morpion/blob/master/lib/board.rb&quot;,&quot;user_id&quot;:55764727}}" data-hydro-click-hmac="dbedc2cdd983850834bcba4f489b4118f1c1c9cf7d560be0b9a6afbe531544b7" >Upgrade</a>
       
 <div id="feature-enrollment-toggle" class="hide-sm hide-md feature-preview-details position-relative">
   <button
@@ -623,24 +623,24 @@
     class="dropdown-item btn-link"
     role="menuitem"
     data-feature-preview-trigger-url="/users/mako666-star/feature_previews"
-    data-feature-preview-close-details="{&quot;event_type&quot;:&quot;feature_preview.clicks.close_modal&quot;,&quot;payload&quot;:{&quot;originating_url&quot;:&quot;https://github.com/FatoumaKara/projet_morpion/blob/master/app.rb&quot;,&quot;user_id&quot;:55764727}}"
-    data-feature-preview-close-hmac="c376c91964edf6c99d9b37fca263a78ac845f46b4fd60f72d5d7cae569f735df"
-    data-hydro-click="{&quot;event_type&quot;:&quot;feature_preview.clicks.open_modal&quot;,&quot;payload&quot;:{&quot;link_location&quot;:&quot;user_dropdown&quot;,&quot;originating_url&quot;:&quot;https://github.com/FatoumaKara/projet_morpion/blob/master/app.rb&quot;,&quot;user_id&quot;:55764727}}"
-    data-hydro-click-hmac="a9decfa09c02d8c2e5390f80168f97f910516ac182862d62ee2148404d34260b"
+    data-feature-preview-close-details="{&quot;event_type&quot;:&quot;feature_preview.clicks.close_modal&quot;,&quot;payload&quot;:{&quot;originating_url&quot;:&quot;https://github.com/FatoumaKara/projet_morpion/blob/master/lib/board.rb&quot;,&quot;user_id&quot;:55764727}}"
+    data-feature-preview-close-hmac="3be7227239707670440a4099fe8fbc2ac458742a01cfb003d07fe4557de73f14"
+    data-hydro-click="{&quot;event_type&quot;:&quot;feature_preview.clicks.open_modal&quot;,&quot;payload&quot;:{&quot;link_location&quot;:&quot;user_dropdown&quot;,&quot;originating_url&quot;:&quot;https://github.com/FatoumaKara/projet_morpion/blob/master/lib/board.rb&quot;,&quot;user_id&quot;:55764727}}"
+    data-hydro-click-hmac="0bc986c80ff47daea7ce2015df7e7fb053920887b0710c96b44a52ff9fe8329a"
   >
     Feature preview
   </button>
     <span class="feature-preview-indicator js-feature-preview-indicator" hidden></span>
 </div>
 
-    <a role="menuitem" class="dropdown-item" href="https://help.github.com" data-ga-click="Header, go to help, text:help" data-hydro-click="{&quot;event_type&quot;:&quot;global_header.user_menu_dropdown.click&quot;,&quot;payload&quot;:{&quot;request_url&quot;:&quot;https://github.com/FatoumaKara/projet_morpion/blob/master/app.rb&quot;,&quot;target&quot;:&quot;HELP&quot;,&quot;originating_url&quot;:&quot;https://github.com/FatoumaKara/projet_morpion/blob/master/app.rb&quot;,&quot;user_id&quot;:55764727}}" data-hydro-click-hmac="d5798306c9f586472c7b2b99f5de4a0416b4c688bc978b1b0df3a039835baad4" >Help</a>
-    <a role="menuitem" class="dropdown-item" href="/settings/profile" data-ga-click="Header, go to settings, icon:settings" data-hydro-click="{&quot;event_type&quot;:&quot;global_header.user_menu_dropdown.click&quot;,&quot;payload&quot;:{&quot;request_url&quot;:&quot;https://github.com/FatoumaKara/projet_morpion/blob/master/app.rb&quot;,&quot;target&quot;:&quot;SETTINGS&quot;,&quot;originating_url&quot;:&quot;https://github.com/FatoumaKara/projet_morpion/blob/master/app.rb&quot;,&quot;user_id&quot;:55764727}}" data-hydro-click-hmac="830a45981e5ced91f04472ebd030bef308fbbc3c2edfaf885d6cd1c1c04a5803" >Settings</a>
-    <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="logout-form" action="/logout" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="oo/RocMaOgQuauQGiUbu+l2neDc5u/GcpJD5dOd4Zf60fNobeAXSZIJpLGJ/66WhIUiGmxXDUt0wMonvxdBwnQ==" />
+    <a role="menuitem" class="dropdown-item" href="https://help.github.com" data-ga-click="Header, go to help, text:help" data-hydro-click="{&quot;event_type&quot;:&quot;global_header.user_menu_dropdown.click&quot;,&quot;payload&quot;:{&quot;request_url&quot;:&quot;https://github.com/FatoumaKara/projet_morpion/blob/master/lib/board.rb&quot;,&quot;target&quot;:&quot;HELP&quot;,&quot;originating_url&quot;:&quot;https://github.com/FatoumaKara/projet_morpion/blob/master/lib/board.rb&quot;,&quot;user_id&quot;:55764727}}" data-hydro-click-hmac="d1884ab2fc8490fa4e73258fdc86be5c1a042de4d5ba72d5eee0fe8492b99c17" >Help</a>
+    <a role="menuitem" class="dropdown-item" href="/settings/profile" data-ga-click="Header, go to settings, icon:settings" data-hydro-click="{&quot;event_type&quot;:&quot;global_header.user_menu_dropdown.click&quot;,&quot;payload&quot;:{&quot;request_url&quot;:&quot;https://github.com/FatoumaKara/projet_morpion/blob/master/lib/board.rb&quot;,&quot;target&quot;:&quot;SETTINGS&quot;,&quot;originating_url&quot;:&quot;https://github.com/FatoumaKara/projet_morpion/blob/master/lib/board.rb&quot;,&quot;user_id&quot;:55764727}}" data-hydro-click-hmac="218d3179dd99534e4b68ecfdf00b0a4bdfa5ae12b2c5ff8a702549636f0c1c15" >Settings</a>
+    <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="logout-form" action="/logout" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="smM0LvIvPUss7Mh4xO/2I8tFdPSXyL4zQmsKoUjUWgekkD+USTDVK4DvABwyQr14t6qKWLuwHXLWyXo6anxPZA==" />
       
-      <button type="submit" class="dropdown-item dropdown-signout" data-ga-click="Header, sign out, icon:logout" data-hydro-click="{&quot;event_type&quot;:&quot;global_header.user_menu_dropdown.click&quot;,&quot;payload&quot;:{&quot;request_url&quot;:&quot;https://github.com/FatoumaKara/projet_morpion/blob/master/app.rb&quot;,&quot;target&quot;:&quot;SIGN_OUT&quot;,&quot;originating_url&quot;:&quot;https://github.com/FatoumaKara/projet_morpion/blob/master/app.rb&quot;,&quot;user_id&quot;:55764727}}" data-hydro-click-hmac="2c56d07bd91025b4e771ea117608a5bd155f8f6be9c48ae7d8784ffcbf9b2841"  role="menuitem">
+      <button type="submit" class="dropdown-item dropdown-signout" data-ga-click="Header, sign out, icon:logout" data-hydro-click="{&quot;event_type&quot;:&quot;global_header.user_menu_dropdown.click&quot;,&quot;payload&quot;:{&quot;request_url&quot;:&quot;https://github.com/FatoumaKara/projet_morpion/blob/master/lib/board.rb&quot;,&quot;target&quot;:&quot;SIGN_OUT&quot;,&quot;originating_url&quot;:&quot;https://github.com/FatoumaKara/projet_morpion/blob/master/lib/board.rb&quot;,&quot;user_id&quot;:55764727}}" data-hydro-click-hmac="94cbb6eba45561bce2fe213d2d0b927bd14314b3cdaa258146346d832b0c7585"  role="menuitem">
         Sign out
       </button>
-      <input type="text" name="required_field_5555" hidden="hidden" class="form-control" /><input type="hidden" name="timestamp" value="1595543286741" class="form-control" /><input type="hidden" name="timestamp_secret" value="16c21747b749c612c779bf518e864d5223cc8fbe0a09b0c66e5dda122bd60a47" class="form-control" />
+      <input type="text" name="required_field_877a" hidden="hidden" class="form-control" /><input type="hidden" name="timestamp" value="1595543304485" class="form-control" /><input type="hidden" name="timestamp_secret" value="2d090c92d174137fadeb471ecafdcaedcbab73f776e5386697fd42764ca641f4" class="form-control" />
 </form>  </details-menu>
 </details>
 
@@ -725,10 +725,10 @@
       <ul class="pagehead-actions flex-shrink-0 d-none d-md-inline" style="padding: 2px 0;">
 
   <li>
-        <form data-remote="true" class="d-flex js-social-form js-social-container" action="/notifications/subscribe" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="k7d2or94LlnKL6AI+v6yeI8Mvyfjxddbki7TilNFlAHDR6jY9iEsT6TYHN81AjdQW5WvQdb9PvGeT2lpJIc23w==" />      <input type="hidden" name="repository_id" value="281940588">
+        <form data-remote="true" class="d-flex js-social-form js-social-container" action="/notifications/subscribe" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="QZuRmb6/ZOTJsbEzhYyCvlp6BTpT8OvgNHYfICOg+HcRa0/j9+Zm8qdGDeRKcAeWjuMVXGbIAko4F6XDVGJaqQ==" />      <input type="hidden" name="repository_id" value="281940588">
 
       <details class="details-reset details-overlay select-menu hx_rsm">
-        <summary class="btn btn-sm btn-with-count" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;WATCH_BUTTON&quot;,&quot;repository_id&quot;:281940588,&quot;originating_url&quot;:&quot;https://github.com/FatoumaKara/projet_morpion/blob/master/app.rb&quot;,&quot;user_id&quot;:55764727}}" data-hydro-click-hmac="a8068d8d4e794ecd3bd245f7d68f426f469f7c8299aa2935aec243fb021e9b97" data-ga-click="Repository, click Watch settings, action:blob#show">          <span data-menu-button>
+        <summary class="btn btn-sm btn-with-count" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;WATCH_BUTTON&quot;,&quot;repository_id&quot;:281940588,&quot;originating_url&quot;:&quot;https://github.com/FatoumaKara/projet_morpion/blob/master/lib/board.rb&quot;,&quot;user_id&quot;:55764727}}" data-hydro-click-hmac="2df754ae9d743b09400bb8fd300eeb601cf6154d1a314076853638ad20d0cb45" data-ga-click="Repository, click Watch settings, action:blob#show">          <span data-menu-button>
               <svg height="16" class="octicon octicon-eye" viewBox="0 0 16 16" version="1.1" width="16" aria-hidden="true"><path fill-rule="evenodd" d="M1.679 7.932c.412-.621 1.242-1.75 2.366-2.717C5.175 4.242 6.527 3.5 8 3.5c1.473 0 2.824.742 3.955 1.715 1.124.967 1.954 2.096 2.366 2.717a.119.119 0 010 .136c-.412.621-1.242 1.75-2.366 2.717C10.825 11.758 9.473 12.5 8 12.5c-1.473 0-2.824-.742-3.955-1.715C2.92 9.818 2.09 8.69 1.679 8.068a.119.119 0 010-.136zM8 2c-1.981 0-3.67.992-4.933 2.078C1.797 5.169.88 6.423.43 7.1a1.619 1.619 0 000 1.798c.45.678 1.367 1.932 2.637 3.024C4.329 13.008 6.019 14 8 14c1.981 0 3.67-.992 4.933-2.078 1.27-1.091 2.187-2.345 2.637-3.023a1.619 1.619 0 000-1.798c-.45-.678-1.367-1.932-2.637-3.023C11.671 2.992 9.981 2 8 2zm0 8a2 2 0 100-4 2 2 0 000 4z"></path></svg>
 
               Watch
@@ -809,9 +809,9 @@
 
   <li>
       <div class="js-toggler-container js-social-container starring-container ">
-    <form class="starred js-social-form" action="/FatoumaKara/projet_morpion/unstar" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="dZ5LGg0BnPNFQ4lAbC71GzhEDIVqXMB85uflOTkm/0uuXmPeivKCu58fQPyX/pGZpi4Hh3nJ0+6d9NFlo0z5aQ==" />
+    <form class="starred js-social-form" action="/FatoumaKara/projet_morpion/unstar" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="e5lAzaSA0iW+SurxJATHD0FitAn9xMSQKS2wTmT/OASgWWgJI3PMbWQWI03f1KON3wi/C+5R1wJSPoQS/pU+Jg==" />
       <input type="hidden" name="context" value="repository"></input>
-      <button type="submit" class="btn btn-sm btn-with-count  js-toggler-target" aria-label="Unstar this repository" title="Unstar FatoumaKara/projet_morpion" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;UNSTAR_BUTTON&quot;,&quot;repository_id&quot;:281940588,&quot;originating_url&quot;:&quot;https://github.com/FatoumaKara/projet_morpion/blob/master/app.rb&quot;,&quot;user_id&quot;:55764727}}" data-hydro-click-hmac="ceaa5e5b4b31396314607af798204144496537be8e16e10db5efd8a2e06f422a" data-ga-click="Repository, click unstar button, action:blob#show; text:Unstar">        <svg height="16" class="octicon octicon-star-fill" viewBox="0 0 16 16" version="1.1" width="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"></path></svg>
+      <button type="submit" class="btn btn-sm btn-with-count  js-toggler-target" aria-label="Unstar this repository" title="Unstar FatoumaKara/projet_morpion" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;UNSTAR_BUTTON&quot;,&quot;repository_id&quot;:281940588,&quot;originating_url&quot;:&quot;https://github.com/FatoumaKara/projet_morpion/blob/master/lib/board.rb&quot;,&quot;user_id&quot;:55764727}}" data-hydro-click-hmac="8f7e86170809eff1e1e20e0e9d56e3b9eb841475546a93c67755a3b718c7a823" data-ga-click="Repository, click unstar button, action:blob#show; text:Unstar">        <svg height="16" class="octicon octicon-star-fill" viewBox="0 0 16 16" version="1.1" width="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25z"></path></svg>
 
         Unstar
 </button>        <a class="social-count js-social-count" href="/FatoumaKara/projet_morpion/stargazers"
@@ -819,9 +819,9 @@
            0
         </a>
 </form>
-    <form class="unstarred js-social-form" action="/FatoumaKara/projet_morpion/star" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="UbXs5tajBuIEWQZQ+RjMMnsgWyJ1jvwlR+v1Q+4AH99t4agiWI/sYnzOO3glSqilf/gdt+smnWhTpRhOGbwpPA==" />
+    <form class="unstarred js-social-form" action="/FatoumaKara/projet_morpion/star" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="/a/NC0+NRx4YqYjIzAyPcZY0WT6PpCgMhf2LoMvTQxPB+4nPwaGtnmA+teAQXuvmkuwfqxEMSUGRs2atPG918A==" />
       <input type="hidden" name="context" value="repository"></input>
-      <button type="submit" class="btn btn-sm btn-with-count  js-toggler-target" aria-label="Unstar this repository" title="Star FatoumaKara/projet_morpion" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;STAR_BUTTON&quot;,&quot;repository_id&quot;:281940588,&quot;originating_url&quot;:&quot;https://github.com/FatoumaKara/projet_morpion/blob/master/app.rb&quot;,&quot;user_id&quot;:55764727}}" data-hydro-click-hmac="5420e262cc7e51deff448b8e377570c4a4df6f5509e909779960088485faafc9" data-ga-click="Repository, click star button, action:blob#show; text:Star">        <svg height="16" class="octicon octicon-star" viewBox="0 0 16 16" version="1.1" width="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"></path></svg>
+      <button type="submit" class="btn btn-sm btn-with-count  js-toggler-target" aria-label="Unstar this repository" title="Star FatoumaKara/projet_morpion" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;STAR_BUTTON&quot;,&quot;repository_id&quot;:281940588,&quot;originating_url&quot;:&quot;https://github.com/FatoumaKara/projet_morpion/blob/master/lib/board.rb&quot;,&quot;user_id&quot;:55764727}}" data-hydro-click-hmac="3a6cf6745cc3c040b46b81fd6dd504d09e3fae0ec5f613cceb226d11414f683e" data-ga-click="Repository, click star button, action:blob#show; text:Star">        <svg height="16" class="octicon octicon-star" viewBox="0 0 16 16" version="1.1" width="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.21.612a.75.75 0 01.416 1.279l-3.046 2.97.719 4.192a.75.75 0 01-1.088.791L8 12.347l-3.766 1.98a.75.75 0 01-1.088-.79l.72-4.194L.818 6.374a.75.75 0 01.416-1.28l4.21-.611L7.327.668A.75.75 0 018 .25zm0 2.445L6.615 5.5a.75.75 0 01-.564.41l-3.097.45 2.24 2.184a.75.75 0 01.216.664l-.528 3.084 2.769-1.456a.75.75 0 01.698 0l2.77 1.456-.53-3.084a.75.75 0 01.216-.664l2.24-2.183-3.096-.45a.75.75 0 01-.564-.41L8 2.694v.001z"></path></svg>
 
         Star
 </button>        <a class="social-count js-social-count" href="/FatoumaKara/projet_morpion/stargazers"
@@ -833,8 +833,8 @@
   </li>
 
   <li>
-          <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="btn-with-count" action="/FatoumaKara/projet_morpion/fork" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="WOCogoqgP4yBoq9rjpM//d1L8XBPOCwrZ+WiVIUHMuYPez2kg2+M0GA3/B2yumLdq0YAD2IgsyL3OUMi5l6dAw==" />
-            <button class="btn btn-sm btn-with-count" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;FORK_BUTTON&quot;,&quot;repository_id&quot;:281940588,&quot;originating_url&quot;:&quot;https://github.com/FatoumaKara/projet_morpion/blob/master/app.rb&quot;,&quot;user_id&quot;:55764727}}" data-hydro-click-hmac="e85c63361eb086043ba08e0021245ccc7481a728c05ce3c009d64a4f2c478e92" data-ga-click="Repository, show fork modal, action:blob#show; text:Fork" type="submit" title="Fork your own copy of FatoumaKara/projet_morpion to your account" aria-label="Fork your own copy of FatoumaKara/projet_morpion to your account">              <svg class="octicon octicon-repo-forked" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M5 3.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm0 2.122a2.25 2.25 0 10-1.5 0v.878A2.25 2.25 0 005.75 8.5h1.5v2.128a2.251 2.251 0 101.5 0V8.5h1.5a2.25 2.25 0 002.25-2.25v-.878a2.25 2.25 0 10-1.5 0v.878a.75.75 0 01-.75.75h-4.5A.75.75 0 015 6.25v-.878zm3.75 7.378a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm3-8.75a.75.75 0 100-1.5.75.75 0 000 1.5z"></path></svg>
+          <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="btn-with-count" action="/FatoumaKara/projet_morpion/fork" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="Ssi/dgnuyzRl4l0fFsqUwOS66SVV3SSrLZmwG5PubdQdUypQACF4aIR3Dmkq48ngkrcYWnjFu6K9RVFt8LfCMQ==" />
+            <button class="btn btn-sm btn-with-count" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;FORK_BUTTON&quot;,&quot;repository_id&quot;:281940588,&quot;originating_url&quot;:&quot;https://github.com/FatoumaKara/projet_morpion/blob/master/lib/board.rb&quot;,&quot;user_id&quot;:55764727}}" data-hydro-click-hmac="67acc64e53d0ebf85dbd3ab91b2730725d93c7b404d444b7e84e768e1ca1a72a" data-ga-click="Repository, show fork modal, action:blob#show; text:Fork" type="submit" title="Fork your own copy of FatoumaKara/projet_morpion to your account" aria-label="Fork your own copy of FatoumaKara/projet_morpion to your account">              <svg class="octicon octicon-repo-forked" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M5 3.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm0 2.122a2.25 2.25 0 10-1.5 0v.878A2.25 2.25 0 005.75 8.5h1.5v2.128a2.251 2.251 0 101.5 0V8.5h1.5a2.25 2.25 0 002.25-2.25v-.878a2.25 2.25 0 10-1.5 0v.878a.75.75 0 01-.75.75h-4.5A.75.75 0 015 6.25v-.878zm3.75 7.378a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm3-8.75a.75.75 0 100-1.5.75.75 0 000 1.5z"></path></svg>
               Fork
 </button></form>
     <a href="/FatoumaKara/projet_morpion/network/members" class="social-count"
@@ -965,9 +965,9 @@
   
 
 
-    <a class="d-none js-permalink-shortcut" data-hotkey="y" href="/FatoumaKara/projet_morpion/blob/633d8dd08ba6b9964aa9191154f043fd7609791c/app.rb">Permalink</a>
+    <a class="d-none js-permalink-shortcut" data-hotkey="y" href="/FatoumaKara/projet_morpion/blob/633d8dd08ba6b9964aa9191154f043fd7609791c/lib/board.rb">Permalink</a>
 
-    <!-- blob contrib key: blob_contributors:v22:bf6a1dc4ace41b0367fe2498676b3d27 -->
+    <!-- blob contrib key: blob_contributors:v22:10963207c560bb152193d5861d4a22ef -->
     
 
     <div class="d-flex flex-items-center flex-shrink-0 pb-3 flex-wrap flex-justify-between flex-md-justify-start">
@@ -982,7 +982,7 @@
     <span class="dropdown-caret"></span>
   </summary>
 
-  <details-menu class="SelectMenu SelectMenu--hasFilter" src="/FatoumaKara/projet_morpion/refs/master/app.rb?source_action=show&amp;source_controller=blob" preload>
+  <details-menu class="SelectMenu SelectMenu--hasFilter" src="/FatoumaKara/projet_morpion/refs/master/lib/board.rb?source_action=show&amp;source_controller=blob" preload>
     <div class="SelectMenu-modal">
       <include-fragment class="SelectMenu-loading" aria-label="Menu is loading">
         <svg class="octicon octicon-octoface anim-pulse" height="32" viewBox="0 0 16 16" version="1.1" width="32" aria-hidden="true"><path fill-rule="evenodd" d="M14.7 5.34c.13-.32.55-1.59-.13-3.31 0 0-1.05-.33-3.44 1.3-1-.28-2.07-.32-3.13-.32s-2.13.04-3.13.32c-2.39-1.64-3.44-1.3-3.44-1.3-.68 1.72-.26 2.99-.13 3.31C.49 6.21 0 7.33 0 8.69 0 13.84 3.33 15 7.98 15S16 13.84 16 8.69c0-1.36-.49-2.48-1.3-3.35zM8 14.02c-3.3 0-5.98-.15-5.98-3.35 0-.76.38-1.48 1.02-2.07 1.07-.98 2.9-.46 4.96-.46 2.07 0 3.88-.52 4.96.46.65.59 1.02 1.3 1.02 2.07 0 3.19-2.68 3.35-5.98 3.35zM5.49 9.01c-.66 0-1.2.8-1.2 1.78s.54 1.79 1.2 1.79c.66 0 1.2-.8 1.2-1.79s-.54-1.78-1.2-1.78zm5.02 0c-.66 0-1.2.79-1.2 1.78s.54 1.79 1.2 1.79c.66 0 1.2-.8 1.2-1.79s-.53-1.78-1.2-1.78z"></path></svg>
@@ -992,9 +992,9 @@
 </details>
 
       <h2 id="blob-path" class="breadcrumb flex-auto min-width-0 text-normal mx-0 mx-md-3 width-full width-md-auto flex-order-1 flex-md-order-none mt-3 mt-md-0">
-        <span class="js-repo-root text-bold"><span class="js-path-segment d-inline-block wb-break-all"><a data-pjax="true" href="/FatoumaKara/projet_morpion"><span>projet_morpion</span></a></span></span><span class="separator">/</span><strong class="final-path">app.rb</strong>
+        <span class="js-repo-root text-bold"><span class="js-path-segment d-inline-block wb-break-all"><a data-pjax="true" href="/FatoumaKara/projet_morpion"><span>projet_morpion</span></a></span></span><span class="separator">/</span><span class="js-path-segment d-inline-block wb-break-all"><a data-pjax="true" href="/FatoumaKara/projet_morpion/tree/master/lib"><span>lib</span></a></span><span class="separator">/</span><strong class="final-path">board.rb</strong>
           <span class="separator">/</span><details class="details-reset details-overlay d-inline" id="jumpto-symbol-select-menu">
-  <summary class="btn-link link-gray css-truncate" aria-haspopup="true" data-hotkey="r" data-hydro-click="{&quot;event_type&quot;:&quot;code_navigation.click_on_blob_definitions&quot;,&quot;payload&quot;:{&quot;action&quot;:&quot;click_on_blob_definitions&quot;,&quot;repository_id&quot;:281940588,&quot;ref&quot;:&quot;master&quot;,&quot;language&quot;:&quot;Ruby&quot;,&quot;originating_url&quot;:&quot;https://github.com/FatoumaKara/projet_morpion/blob/master/app.rb&quot;,&quot;user_id&quot;:55764727}}" data-hydro-click-hmac="4e5712d3c99ddbb27d48123dde432c67036af72dce7eb5830c32e2e8c0fc1527">
+  <summary class="btn-link link-gray css-truncate" aria-haspopup="true" data-hotkey="r" data-hydro-click="{&quot;event_type&quot;:&quot;code_navigation.click_on_blob_definitions&quot;,&quot;payload&quot;:{&quot;action&quot;:&quot;click_on_blob_definitions&quot;,&quot;repository_id&quot;:281940588,&quot;ref&quot;:&quot;master&quot;,&quot;language&quot;:&quot;Ruby&quot;,&quot;originating_url&quot;:&quot;https://github.com/FatoumaKara/projet_morpion/blob/master/lib/board.rb&quot;,&quot;user_id&quot;:55764727}}" data-hydro-click-hmac="0857604fe1546e0d897133f4b32ce832ad4622815061cb57a11534834c987ac2">
       <svg class="octicon octicon-code" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M4.72 3.22a.75.75 0 011.06 1.06L2.06 8l3.72 3.72a.75.75 0 11-1.06 1.06L.47 8.53a.75.75 0 010-1.06l4.25-4.25zm6.56 0a.75.75 0 10-1.06 1.06L13.94 8l-3.72 3.72a.75.75 0 101.06 1.06l4.25-4.25a.75.75 0 000-1.06l-4.25-4.25z"></path></svg>
     <span data-menu-button>Jump to</span>
     <span class="dropdown-caret"></span>
@@ -1020,7 +1020,27 @@
         </div>
       <div class="SelectMenu-list">
         <div data-filterable-for="jumpto-symbols-filter-field" data-filterable-type="substring">
-        </div>
+            <a class="SelectMenu-item d-flex flex-justify-between css-truncate" role="menuitemradio" aria-checked="false" rel="nofollow" data-hydro-click="{&quot;event_type&quot;:&quot;code_navigation.navigate_to_blob_definition&quot;,&quot;payload&quot;:{&quot;action&quot;:&quot;navigate_to_blob_definition&quot;,&quot;repository_id&quot;:281940588,&quot;ref&quot;:&quot;master&quot;,&quot;language&quot;:&quot;Ruby&quot;,&quot;originating_url&quot;:&quot;https://github.com/FatoumaKara/projet_morpion/blob/master/lib/board.rb&quot;,&quot;user_id&quot;:55764727}}" data-hydro-click-hmac="c751bc9d6e698d5d4b7711352d5784c58cf2d7d1223badbd8cd5ac0b14a970ed" href="/FatoumaKara/projet_morpion/blob/master/lib/board.rb#L4">
+              <svg class="octicon octicon-check SelectMenu-icon SelectMenu-icon--check" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg>
+              <span class="flex-auto css-truncate-target" data-menu-button-text>Board</span>
+              <span class="flex-auto d-flex flex-justify-end">Class</span>
+</a>            <a class="SelectMenu-item d-flex flex-justify-between css-truncate" role="menuitemradio" aria-checked="false" rel="nofollow" data-hydro-click="{&quot;event_type&quot;:&quot;code_navigation.navigate_to_blob_definition&quot;,&quot;payload&quot;:{&quot;action&quot;:&quot;navigate_to_blob_definition&quot;,&quot;repository_id&quot;:281940588,&quot;ref&quot;:&quot;master&quot;,&quot;language&quot;:&quot;Ruby&quot;,&quot;originating_url&quot;:&quot;https://github.com/FatoumaKara/projet_morpion/blob/master/lib/board.rb&quot;,&quot;user_id&quot;:55764727}}" data-hydro-click-hmac="c751bc9d6e698d5d4b7711352d5784c58cf2d7d1223badbd8cd5ac0b14a970ed" href="/FatoumaKara/projet_morpion/blob/master/lib/board.rb#L9">
+              <svg class="octicon octicon-check SelectMenu-icon SelectMenu-icon--check" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg>
+              <span class="flex-auto css-truncate-target" data-menu-button-text>initialize</span>
+              <span class="flex-auto d-flex flex-justify-end">Method</span>
+</a>            <a class="SelectMenu-item d-flex flex-justify-between css-truncate" role="menuitemradio" aria-checked="false" rel="nofollow" data-hydro-click="{&quot;event_type&quot;:&quot;code_navigation.navigate_to_blob_definition&quot;,&quot;payload&quot;:{&quot;action&quot;:&quot;navigate_to_blob_definition&quot;,&quot;repository_id&quot;:281940588,&quot;ref&quot;:&quot;master&quot;,&quot;language&quot;:&quot;Ruby&quot;,&quot;originating_url&quot;:&quot;https://github.com/FatoumaKara/projet_morpion/blob/master/lib/board.rb&quot;,&quot;user_id&quot;:55764727}}" data-hydro-click-hmac="c751bc9d6e698d5d4b7711352d5784c58cf2d7d1223badbd8cd5ac0b14a970ed" href="/FatoumaKara/projet_morpion/blob/master/lib/board.rb#L17">
+              <svg class="octicon octicon-check SelectMenu-icon SelectMenu-icon--check" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg>
+              <span class="flex-auto css-truncate-target" data-menu-button-text>play_turn</span>
+              <span class="flex-auto d-flex flex-justify-end">Method</span>
+</a>            <a class="SelectMenu-item d-flex flex-justify-between css-truncate" role="menuitemradio" aria-checked="false" rel="nofollow" data-hydro-click="{&quot;event_type&quot;:&quot;code_navigation.navigate_to_blob_definition&quot;,&quot;payload&quot;:{&quot;action&quot;:&quot;navigate_to_blob_definition&quot;,&quot;repository_id&quot;:281940588,&quot;ref&quot;:&quot;master&quot;,&quot;language&quot;:&quot;Ruby&quot;,&quot;originating_url&quot;:&quot;https://github.com/FatoumaKara/projet_morpion/blob/master/lib/board.rb&quot;,&quot;user_id&quot;:55764727}}" data-hydro-click-hmac="c751bc9d6e698d5d4b7711352d5784c58cf2d7d1223badbd8cd5ac0b14a970ed" href="/FatoumaKara/projet_morpion/blob/master/lib/board.rb#L40">
+              <svg class="octicon octicon-check SelectMenu-icon SelectMenu-icon--check" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg>
+              <span class="flex-auto css-truncate-target" data-menu-button-text>victory?</span>
+              <span class="flex-auto d-flex flex-justify-end">Method</span>
+</a>            <a class="SelectMenu-item d-flex flex-justify-between css-truncate" role="menuitemradio" aria-checked="false" rel="nofollow" data-hydro-click="{&quot;event_type&quot;:&quot;code_navigation.navigate_to_blob_definition&quot;,&quot;payload&quot;:{&quot;action&quot;:&quot;navigate_to_blob_definition&quot;,&quot;repository_id&quot;:281940588,&quot;ref&quot;:&quot;master&quot;,&quot;language&quot;:&quot;Ruby&quot;,&quot;originating_url&quot;:&quot;https://github.com/FatoumaKara/projet_morpion/blob/master/lib/board.rb&quot;,&quot;user_id&quot;:55764727}}" data-hydro-click-hmac="c751bc9d6e698d5d4b7711352d5784c58cf2d7d1223badbd8cd5ac0b14a970ed" href="/FatoumaKara/projet_morpion/blob/master/lib/board.rb#L55">
+              <svg class="octicon octicon-check SelectMenu-icon SelectMenu-icon--check" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg>
+              <span class="flex-auto css-truncate-target" data-menu-button-text>board</span>
+              <span class="flex-auto d-flex flex-justify-end">Method</span>
+</a>        </div>
       </div>
       <footer class="SelectMenu-footer">
         <div class="d-flex flex-justify-between">
@@ -1049,7 +1069,7 @@
 
 </summary>            <ul class="dropdown-menu dropdown-menu-sw">
             <li class="d-block d-md-none">
-              <a class="dropdown-item d-flex flex-items-baseline" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;FIND_FILE_BUTTON&quot;,&quot;repository_id&quot;:281940588,&quot;originating_url&quot;:&quot;https://github.com/FatoumaKara/projet_morpion/blob/master/app.rb&quot;,&quot;user_id&quot;:55764727}}" data-hydro-click-hmac="3fc039e8d9241a328fe5fd025a9162bcf7a5fbbbd8a5a34fc72566d2283456e3" data-ga-click="Repository, find file, location:repo overview" data-hotkey="t" data-pjax="true" href="/FatoumaKara/projet_morpion/find/master">
+              <a class="dropdown-item d-flex flex-items-baseline" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;FIND_FILE_BUTTON&quot;,&quot;repository_id&quot;:281940588,&quot;originating_url&quot;:&quot;https://github.com/FatoumaKara/projet_morpion/blob/master/lib/board.rb&quot;,&quot;user_id&quot;:55764727}}" data-hydro-click-hmac="01830a388b7915aa9debb0f3e826d58a18f8428d39670bfcfa66a2bf43c7195e" data-ga-click="Repository, find file, location:repo overview" data-hotkey="t" data-pjax="true" href="/FatoumaKara/projet_morpion/find/master">
                 <span class="flex-auto">Go to file</span>
                 <span class="text-small text-gray" aria-hidden="true">T</span>
 </a>            </li>
@@ -1071,7 +1091,7 @@
             </li>
             <li class="dropdown-divider" role="none"></li>
             <li>
-              <clipboard-copy value="app.rb" class="dropdown-item cursor-pointer" data-toggle-for="blob-more-options-details">
+              <clipboard-copy value="lib/board.rb" class="dropdown-item cursor-pointer" data-toggle-for="blob-more-options-details">
                 Copy path
               </clipboard-copy>
             </li>
@@ -1082,71 +1102,17 @@
 
 
     <div class="Box d-flex flex-column flex-shrink-0 mb-3">
-      
-  <div class="Box-header Box-header--blue Details js-details-container">
-      <div class="d-flex flex-items-center">
-        <span class="flex-shrink-0 ml-n1 mr-n1 mt-n1 mb-n1">
-          <a rel="author" data-skip-pjax="true" data-hovercard-type="user" data-hovercard-url="/users/FatoumaKara/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="/FatoumaKara"><img class="avatar avatar-user" src="https://avatars2.githubusercontent.com/u/67610410?s=48&amp;v=4" width="24" height="24" alt="@FatoumaKara" /></a>
-        </span>
-        <div class="flex-1 d-flex flex-items-center ml-3 min-width-0">
-          <div class="css-truncate css-truncate-overflow">
-            <a class="text-bold link-gray-dark" rel="author" data-hovercard-type="user" data-hovercard-url="/users/FatoumaKara/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="/FatoumaKara">FatoumaKara</a>
-
-              <span>
-                <a data-pjax="true" title="maj 5" class="link-gray" href="/FatoumaKara/projet_morpion/commit/2989bb403d77ef6f681d5a7b2b205c6546710c05">maj 5</a>
-              </span>
-          </div>
-
-
-          <span class="ml-2">
-            <include-fragment accept="text/fragment+html" src="/FatoumaKara/projet_morpion/commit/2989bb403d77ef6f681d5a7b2b205c6546710c05/rollup?direction=e" class="d-inline"></include-fragment>
-          </span>
+      <include-fragment src="/FatoumaKara/projet_morpion/contributors/master/lib/board.rb" class="commit-loader">
+        <div class="Box-header Box-header--blue d-flex flex-items-center">
+          <div class="Skeleton avatar avatar-user flex-shrink-0 ml-n1 mr-n1 mt-n1 mb-n1" style="width:24px;height:24px;"></div>
+          <div class="Skeleton Skeleton--text col-5 ml-2">&nbsp;</div>
         </div>
-        <div class="ml-3 d-flex flex-shrink-0 flex-items-center flex-justify-end text-gray no-wrap">
-          <span class="d-none d-md-inline">
-            <span>Latest commit</span>
-            <a class="text-small text-mono link-gray" href="/FatoumaKara/projet_morpion/commit/2989bb403d77ef6f681d5a7b2b205c6546710c05" data-pjax>2989bb4</a>
-            <span itemprop="dateModified"><relative-time datetime="2020-07-23T21:55:23Z" class="no-wrap">Jul 23, 2020</relative-time></span>
-          </span>
 
-          <a data-pjax href="/FatoumaKara/projet_morpion/commits/master/app.rb" class="ml-3 no-wrap link-gray-dark no-underline">
-            <svg height="16" class="octicon octicon-history text-gray" text="gray" viewBox="0 0 16 16" version="1.1" width="16" aria-hidden="true"><path fill-rule="evenodd" d="M1.643 3.143L.427 1.927A.25.25 0 000 2.104V5.75c0 .138.112.25.25.25h3.646a.25.25 0 00.177-.427L2.715 4.215a6.5 6.5 0 11-1.18 4.458.75.75 0 10-1.493.154 8.001 8.001 0 101.6-5.684zM7.75 4a.75.75 0 01.75.75v2.992l2.028.812a.75.75 0 01-.557 1.392l-2.5-1A.75.75 0 017 8.25v-3.5A.75.75 0 017.75 4z"></path></svg>
-
-            <span class="d-none d-sm-inline">
-              <strong>History</strong>
-            </span>
-          </a>
+        <div class="Box-body d-flex flex-items-center" >
+          <div class="Skeleton Skeleton--text col-1">&nbsp;</div>
+          <span class="text-red h6 loader-error">Cannot retrieve contributors at this time</span>
         </div>
-      </div>
-
-  </div>
-
-  <div class="Box-body d-flex flex-items-center flex-auto border-bottom-0 flex-wrap" >
-    <details class="details-reset details-overlay details-overlay-dark lh-default text-gray-dark float-left mr-3" id="blob_contributors_box">
-      <summary class="link-gray-dark">
-        <svg height="16" class="octicon octicon-people text-gray" text="gray" viewBox="0 0 16 16" version="1.1" width="16" aria-hidden="true"><path fill-rule="evenodd" d="M5.5 3.5a2 2 0 100 4 2 2 0 000-4zM2 5.5a3.5 3.5 0 115.898 2.549 5.507 5.507 0 013.034 4.084.75.75 0 11-1.482.235 4.001 4.001 0 00-7.9 0 .75.75 0 01-1.482-.236A5.507 5.507 0 013.102 8.05 3.49 3.49 0 012 5.5zM11 4a.75.75 0 100 1.5 1.5 1.5 0 01.666 2.844.75.75 0 00-.416.672v.352a.75.75 0 00.574.73c1.2.289 2.162 1.2 2.522 2.372a.75.75 0 101.434-.44 5.01 5.01 0 00-2.56-3.012A3 3 0 0011 4z"></path></svg>
-
-        <strong>1</strong>
-        
-        contributor
-      </summary>
-      <details-dialog
-        class="Box Box--overlay d-flex flex-column anim-fade-in fast"
-        aria-label="Users who have contributed to this file"
-        src="/FatoumaKara/projet_morpion/contributors-list/master/app.rb" preload>
-        <div class="Box-header">
-          <button class="Box-btn-octicon btn-octicon float-right" type="button" aria-label="Close dialog" data-close-dialog>
-            <svg class="octicon octicon-x" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M3.72 3.72a.75.75 0 011.06 0L8 6.94l3.22-3.22a.75.75 0 111.06 1.06L9.06 8l3.22 3.22a.75.75 0 11-1.06 1.06L8 9.06l-3.22 3.22a.75.75 0 01-1.06-1.06L6.94 8 3.72 4.78a.75.75 0 010-1.06z"></path></svg>
-          </button>
-          <h3 class="Box-title">
-            Users who have contributed to this file
-          </h3>
-        </div>
-        <include-fragment class="octocat-spinner my-3" aria-label="Loading..."></include-fragment>
-      </details-dialog>
-    </details>
-  </div>
-    </div>
+</include-fragment>    </div>
 
 
 
@@ -1159,34 +1125,34 @@
 <div class="Box-header py-2 d-flex flex-column flex-shrink-0 flex-md-row flex-md-items-center">
   <div class="text-mono f6 flex-auto pr-3 flex-order-2 flex-md-order-1 mt-2 mt-md-0">
 
-      47 lines (31 sloc)
+      71 lines (53 sloc)
       <span class="file-info-divider"></span>
-    985 Bytes
+    2.89 KB
   </div>
 
   <div class="d-flex py-1 py-md-0 flex-auto flex-order-1 flex-md-order-2 flex-sm-grow-0 flex-justify-between">
 
     <div class="BtnGroup">
-      <a id="raw-url" class="btn btn-sm BtnGroup-item" href="/FatoumaKara/projet_morpion/raw/master/app.rb">Raw</a>
-        <a class="btn btn-sm js-update-url-with-hash BtnGroup-item" data-hotkey="b" href="/FatoumaKara/projet_morpion/blame/master/app.rb">Blame</a>
+      <a id="raw-url" class="btn btn-sm BtnGroup-item" href="/FatoumaKara/projet_morpion/raw/master/lib/board.rb">Raw</a>
+        <a class="btn btn-sm js-update-url-with-hash BtnGroup-item" data-hotkey="b" href="/FatoumaKara/projet_morpion/blame/master/lib/board.rb">Blame</a>
     </div>
 
     <div>
           <a class="btn-octicon tooltipped tooltipped-nw js-remove-unless-platform"
              data-platforms="windows,mac"
-             href="x-github-client://openRepo/https://github.com/FatoumaKara/projet_morpion?branch=master&amp;filepath=app.rb"
+             href="x-github-client://openRepo/https://github.com/FatoumaKara/projet_morpion?branch=master&amp;filepath=lib%2Fboard.rb"
              aria-label="Open this file in GitHub Desktop"
              data-ga-click="Repository, open with desktop">
               <svg class="octicon octicon-device-desktop" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M1.75 2.5h12.5a.25.25 0 01.25.25v7.5a.25.25 0 01-.25.25H1.75a.25.25 0 01-.25-.25v-7.5a.25.25 0 01.25-.25zM14.25 1H1.75A1.75 1.75 0 000 2.75v7.5C0 11.216.784 12 1.75 12h3.727c-.1 1.041-.52 1.872-1.292 2.757A.75.75 0 004.75 16h6.5a.75.75 0 00.565-1.243c-.772-.885-1.193-1.716-1.292-2.757h3.727A1.75 1.75 0 0016 10.25v-7.5A1.75 1.75 0 0014.25 1zM9.018 12H6.982a5.72 5.72 0 01-.765 2.5h3.566a5.72 5.72 0 01-.765-2.5z"></path></svg>
           </a>
 
-          <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="inline-form js-update-url-with-hash" action="/FatoumaKara/projet_morpion/edit/master/app.rb" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="FKRsmqYf/JcBuQL8L0ncPZ11bwbN3EonjAJOGJ8lzBEU88rmHKf8SwDNSup4gSgKcn1SfrrpZ+qlS/ajWrjLaQ==" />
+          <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="inline-form js-update-url-with-hash" action="/FatoumaKara/projet_morpion/edit/master/lib/board.rb" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="xChVZ1hz6Usq41arktcQoUHKT+YKlNHENqliZ6owh0T8VR21+DuHcSozVDgXLGAQjcKpyaLgy8krUdpeYgX+yw==" />
             <button class="btn-octicon tooltipped tooltipped-nw" type="submit"
               aria-label="Fork this project and edit the file" data-hotkey="e" data-disable-with>
               <svg class="octicon octicon-pencil" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M11.013 1.427a1.75 1.75 0 012.474 0l1.086 1.086a1.75 1.75 0 010 2.474l-8.61 8.61c-.21.21-.47.364-.756.445l-3.251.93a.75.75 0 01-.927-.928l.929-3.25a1.75 1.75 0 01.445-.758l8.61-8.61zm1.414 1.06a.25.25 0 00-.354 0L10.811 3.75l1.439 1.44 1.263-1.263a.25.25 0 000-.354l-1.086-1.086zM11.189 6.25L9.75 4.81l-6.286 6.287a.25.25 0 00-.064.108l-.558 1.953 1.953-.558a.249.249 0 00.108-.064l6.286-6.286z"></path></svg>
             </button>
 </form>
-          <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="inline-form" action="/FatoumaKara/projet_morpion/delete/master/app.rb" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="vcP/sw7n9C8/vkDL2tiQEQExiXuErc47qyfxfX+2SXy9sbv51FehHh2dU1pbBUDzd64rJ1pEE5Y0I8iawXlbaA==" />
+          <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="inline-form" action="/FatoumaKara/projet_morpion/delete/master/lib/board.rb" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="cUxcr+n5aCODklod6ed+mEWw7Y9nBmy/D1CTADdlN+NKMTV7IuZZG+IyEm1daNH/HAxkF+lA4ptKKZZjaQpjSw==" />
             <button class="btn-octicon btn-octicon-danger tooltipped tooltipped-nw" type="submit"
               aria-label="Fork this project and delete the file" data-disable-with>
               <svg class="octicon octicon-trashcan" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M6.5 1.75a.25.25 0 01.25-.25h2.5a.25.25 0 01.25.25V3h-3V1.75zm4.5 0V3h2.25a.75.75 0 010 1.5H2.75a.75.75 0 010-1.5H5V1.75C5 .784 5.784 0 6.75 0h2.5C10.216 0 11 .784 11 1.75zM4.496 6.675a.75.75 0 10-1.492.15l.66 6.6A1.75 1.75 0 005.405 15h5.19c.9 0 1.652-.681 1.741-1.576l.66-6.6a.75.75 0 00-1.492-.149l-.66 6.6a.25.25 0 01-.249.225h-5.19a.25.25 0 01-.249-.225l-.66-6.6z"></path></svg>
@@ -1204,11 +1170,12 @@
 <table class="highlight tab-size js-file-line-container" data-tab-size="8" data-paste-markdown-skip>
       <tr>
         <td id="L1" class="blob-num js-line-number" data-line-number="1"></td>
-        <td id="LC1" class="blob-code blob-code-inner js-file-line"><span class=pl-en>require</span> <span class=pl-s>&#39;bundler&#39;</span></td>
+        <td id="LC1" class="blob-code blob-code-inner js-file-line"><span class=pl-en>require</span> <span class=pl-s>&#39;pry&#39;</span></td>
       </tr>
       <tr>
         <td id="L2" class="blob-num js-line-number" data-line-number="2"></td>
-        <td id="LC2" class="blob-code blob-code-inner js-file-line"><span class=pl-v>Bundler</span><span class=pl-kos>.</span><span class=pl-en>require</span></td>
+        <td id="LC2" class="blob-code blob-code-inner js-file-line">
+</td>
       </tr>
       <tr>
         <td id="L3" class="blob-num js-line-number" data-line-number="3"></td>
@@ -1217,187 +1184,282 @@
       </tr>
       <tr>
         <td id="L4" class="blob-num js-line-number" data-line-number="4"></td>
-        <td id="LC4" class="blob-code blob-code-inner js-file-line">
-</td>
+        <td id="LC4" class="blob-code blob-code-inner js-file-line"><span class=pl-k>class</span> <span class=pl-v>Board</span> </td>
       </tr>
       <tr>
         <td id="L5" class="blob-num js-line-number" data-line-number="5"></td>
-        <td id="LC5" class="blob-code blob-code-inner js-file-line">$:<span class=pl-kos>.</span><span class=pl-en>unshift</span> <span class=pl-v>File</span><span class=pl-kos>.</span><span class=pl-en>expand_path</span><span class=pl-kos>(</span><span class=pl-s>&quot;./../lib&quot;</span><span class=pl-kos>,</span> <span class=pl-c1>__FILE__</span><span class=pl-kos>)</span></td>
+        <td id="LC5" class="blob-code blob-code-inner js-file-line">	<span class=pl-en>attr_accessor</span> <span class=pl-pds>:array_boardcase</span><span class=pl-kos>,</span> <span class=pl-pds>:count_turn</span> </td>
       </tr>
       <tr>
         <td id="L6" class="blob-num js-line-number" data-line-number="6"></td>
-        <td id="LC6" class="blob-code blob-code-inner js-file-line"><span class=pl-en>require</span> <span class=pl-s>&#39;game&#39;</span> </td>
+        <td id="LC6" class="blob-code blob-code-inner js-file-line">	  <span class=pl-c>#TO DO : la classe a 1 attr_accessor : un array/hash qui contient les BoardCases.</span></td>
       </tr>
       <tr>
         <td id="L7" class="blob-num js-line-number" data-line-number="7"></td>
-        <td id="LC7" class="blob-code blob-code-inner js-file-line"><span class=pl-en>require</span> <span class=pl-s>&#39;player&#39;</span></td>
+        <td id="LC7" class="blob-code blob-code-inner js-file-line">  <span class=pl-c>#Optionnellement on peut aussi lui rajouter un autre sous le nom @count_turn pour compter le nombre de coups joué</span></td>
       </tr>
       <tr>
         <td id="L8" class="blob-num js-line-number" data-line-number="8"></td>
-        <td id="LC8" class="blob-code blob-code-inner js-file-line"><span class=pl-en>require</span> <span class=pl-s>&#39;board&#39;</span></td>
+        <td id="LC8" class="blob-code blob-code-inner js-file-line">
+</td>
       </tr>
       <tr>
         <td id="L9" class="blob-num js-line-number" data-line-number="9"></td>
-        <td id="LC9" class="blob-code blob-code-inner js-file-line"><span class=pl-en>require</span> <span class=pl-s>&#39;boardcase&#39;</span></td>
+        <td id="LC9" class="blob-code blob-code-inner js-file-line">  <span class=pl-k>def</span> <span class=pl-en>initialize</span><span class=pl-kos>(</span><span class=pl-kos>)</span></td>
       </tr>
       <tr>
         <td id="L10" class="blob-num js-line-number" data-line-number="10"></td>
-        <td id="LC10" class="blob-code blob-code-inner js-file-line"><span class=pl-en>require</span> <span class=pl-s>&#39;application&#39;</span></td>
+        <td id="LC10" class="blob-code blob-code-inner js-file-line">    <span class=pl-c>#TO DO :</span></td>
       </tr>
       <tr>
         <td id="L11" class="blob-num js-line-number" data-line-number="11"></td>
-        <td id="LC11" class="blob-code blob-code-inner js-file-line"><span class=pl-en>require</span> <span class=pl-s>&#39;show&#39;</span></td>
+        <td id="LC11" class="blob-code blob-code-inner js-file-line">    <span class=pl-c>#Quand la classe s&#39;initialize, elle doit créer 9 instances BoardCases</span></td>
       </tr>
       <tr>
         <td id="L12" class="blob-num js-line-number" data-line-number="12"></td>
-        <td id="LC12" class="blob-code blob-code-inner js-file-line">
-</td>
+        <td id="LC12" class="blob-code blob-code-inner js-file-line">    <span class=pl-c>#Ces instances sont rangées dans un array/hash qui est l&#39;attr_accessor de la classe</span></td>
       </tr>
       <tr>
         <td id="L13" class="blob-num js-line-number" data-line-number="13"></td>
-        <td id="LC13" class="blob-code blob-code-inner js-file-line"><span class=pl-v>Game</span><span class=pl-kos>.</span><span class=pl-en>new</span></td>
+        <td id="LC13" class="blob-code blob-code-inner js-file-line">    <span class=pl-c1>@count_turn</span> <span class=pl-c1>=</span> <span class=pl-c1>0</span></td>
       </tr>
       <tr>
         <td id="L14" class="blob-num js-line-number" data-line-number="14"></td>
-        <td id="LC14" class="blob-code blob-code-inner js-file-line">
-</td>
+        <td id="LC14" class="blob-code blob-code-inner js-file-line">    <span class=pl-c1>@board</span> <span class=pl-c1>=</span> <span class=pl-kos>{</span><span class=pl-s>&quot;A1&quot;</span><span class=pl-c1>=&gt;</span><span class=pl-s>&quot;&quot;</span><span class=pl-kos>,</span><span class=pl-s>&quot;B1&quot;</span><span class=pl-c1>=&gt;</span><span class=pl-s>&quot;&quot;</span><span class=pl-kos>,</span> <span class=pl-s>&quot;C1&quot;</span><span class=pl-c1>=&gt;</span><span class=pl-s>&quot;&quot;</span><span class=pl-kos>,</span><span class=pl-s>&quot;A2&quot;</span><span class=pl-c1>=&gt;</span><span class=pl-s>&quot;&quot;</span><span class=pl-kos>,</span><span class=pl-s>&quot;B2&quot;</span><span class=pl-c1>=&gt;</span><span class=pl-s>&quot;&quot;</span><span class=pl-kos>,</span><span class=pl-s>&quot;C2&quot;</span><span class=pl-c1>=&gt;</span><span class=pl-s>&quot;&quot;</span><span class=pl-kos>,</span><span class=pl-s>&quot;A3&quot;</span><span class=pl-c1>=&gt;</span><span class=pl-s>&quot;&quot;</span><span class=pl-kos>,</span><span class=pl-s>&quot;B3&quot;</span><span class=pl-c1>=&gt;</span><span class=pl-s>&quot;&quot;</span><span class=pl-kos>,</span><span class=pl-s>&quot;C3&quot;</span><span class=pl-c1>=&gt;</span><span class=pl-s>&quot;&quot;</span><span class=pl-kos>}</span></td>
       </tr>
       <tr>
         <td id="L15" class="blob-num js-line-number" data-line-number="15"></td>
-        <td id="LC15" class="blob-code blob-code-inner js-file-line"><span class=pl-en>puts</span> <span class=pl-s>&quot; Joueur 1, Quel est ton prénom ?&quot;</span></td>
+        <td id="LC15" class="blob-code blob-code-inner js-file-line">  <span class=pl-k>end</span></td>
       </tr>
       <tr>
         <td id="L16" class="blob-num js-line-number" data-line-number="16"></td>
-        <td id="LC16" class="blob-code blob-code-inner js-file-line"><span class=pl-en>print</span> <span class=pl-s>&quot;&gt; &quot;</span></td>
+        <td id="LC16" class="blob-code blob-code-inner js-file-line">
+</td>
       </tr>
       <tr>
         <td id="L17" class="blob-num js-line-number" data-line-number="17"></td>
-        <td id="LC17" class="blob-code blob-code-inner js-file-line"><span class=pl-s1>first_name1</span> <span class=pl-c1>=</span> <span class=pl-en>gets</span><span class=pl-kos>.</span><span class=pl-en>chomp</span></td>
+        <td id="LC17" class="blob-code blob-code-inner js-file-line">  <span class=pl-k>def</span> <span class=pl-en>play_turn</span></td>
       </tr>
       <tr>
         <td id="L18" class="blob-num js-line-number" data-line-number="18"></td>
-        <td id="LC18" class="blob-code blob-code-inner js-file-line">
-</td>
+        <td id="LC18" class="blob-code blob-code-inner js-file-line">    <span class=pl-c>#TO DO : une méthode qui :</span></td>
       </tr>
       <tr>
         <td id="L19" class="blob-num js-line-number" data-line-number="19"></td>
-        <td id="LC19" class="blob-code blob-code-inner js-file-line"><span class=pl-s1>player1</span> <span class=pl-c1>=</span> <span class=pl-v>Player</span><span class=pl-kos>.</span><span class=pl-en>new</span><span class=pl-kos>(</span><span class=pl-s1>first_name1</span><span class=pl-kos>,</span> <span class=pl-s>&quot;X&quot;</span><span class=pl-kos>)</span></td>
+        <td id="LC19" class="blob-code blob-code-inner js-file-line">
+</td>
       </tr>
       <tr>
         <td id="L20" class="blob-num js-line-number" data-line-number="20"></td>
-        <td id="LC20" class="blob-code blob-code-inner js-file-line">
-</td>
+        <td id="LC20" class="blob-code blob-code-inner js-file-line">    <span class=pl-c>#1) demande au bon joueur ce qu&#39;il souhaite faire</span></td>
       </tr>
       <tr>
         <td id="L21" class="blob-num js-line-number" data-line-number="21"></td>
-        <td id="LC21" class="blob-code blob-code-inner js-file-line"><span class=pl-en>puts</span> <span class=pl-s>&quot; Joueur 2, Quel est ton prénom ?&quot;</span></td>
+        <td id="LC21" class="blob-code blob-code-inner js-file-line">    <span class=pl-c>#2) change la BoardCase jouée en fonction de la valeur du joueur (X ou O)</span></td>
       </tr>
       <tr>
         <td id="L22" class="blob-num js-line-number" data-line-number="22"></td>
-        <td id="LC22" class="blob-code blob-code-inner js-file-line"><span class=pl-en>print</span> <span class=pl-s>&quot;&gt; &quot;</span></td>
+        <td id="LC22" class="blob-code blob-code-inner js-file-line">    </td>
       </tr>
       <tr>
         <td id="L23" class="blob-num js-line-number" data-line-number="23"></td>
-        <td id="LC23" class="blob-code blob-code-inner js-file-line"><span class=pl-s1>first_name2</span> <span class=pl-c1>=</span> <span class=pl-en>gets</span><span class=pl-kos>.</span><span class=pl-en>chomp</span></td>
+        <td id="LC23" class="blob-code blob-code-inner js-file-line">    <span class=pl-en>puts</span> <span class=pl-s>&quot; Choissisez la case à remplir &quot;</span></td>
       </tr>
       <tr>
         <td id="L24" class="blob-num js-line-number" data-line-number="24"></td>
-        <td id="LC24" class="blob-code blob-code-inner js-file-line">
-</td>
+        <td id="LC24" class="blob-code blob-code-inner js-file-line">    <span class=pl-en>print</span> <span class=pl-s>&quot;&gt;&quot;</span></td>
       </tr>
       <tr>
         <td id="L25" class="blob-num js-line-number" data-line-number="25"></td>
-        <td id="LC25" class="blob-code blob-code-inner js-file-line"><span class=pl-s1>player2</span> <span class=pl-c1>=</span> <span class=pl-v>Player</span><span class=pl-kos>.</span><span class=pl-en>new</span><span class=pl-kos>(</span><span class=pl-s1>first_name2</span><span class=pl-kos>,</span> <span class=pl-s>&quot;O&quot;</span><span class=pl-kos>)</span></td>
+        <td id="LC25" class="blob-code blob-code-inner js-file-line">    <span class=pl-s1>insert</span> <span class=pl-c1>=</span> <span class=pl-en>gets</span><span class=pl-kos>.</span><span class=pl-en>chomp</span><span class=pl-kos>.</span><span class=pl-en>to_s</span></td>
       </tr>
       <tr>
         <td id="L26" class="blob-num js-line-number" data-line-number="26"></td>
-        <td id="LC26" class="blob-code blob-code-inner js-file-line"><span class=pl-s1>test</span> <span class=pl-c1>=</span> <span class=pl-v>Board</span><span class=pl-kos>.</span><span class=pl-en>new</span></td>
+        <td id="LC26" class="blob-code blob-code-inner js-file-line">    <span class=pl-k>if</span> <span class=pl-en>count_turn</span> % <span class=pl-c1>2</span> == <span class=pl-c1>0</span></td>
       </tr>
       <tr>
         <td id="L27" class="blob-num js-line-number" data-line-number="27"></td>
-        <td id="LC27" class="blob-code blob-code-inner js-file-line"><span class=pl-en>puts</span> <span class=pl-s>&quot;<span class=pl-s1><span class=pl-kos>#{</span><span class=pl-s1>player1</span><span class=pl-kos>.</span><span class=pl-en>name</span><span class=pl-kos>}</span></span>, c&#39;est à ton tour de jouer !&quot;</span></td>
+        <td id="LC27" class="blob-code blob-code-inner js-file-line">    <span class=pl-c1>@board</span><span class=pl-kos>[</span><span class=pl-s1>insert</span><span class=pl-kos>]</span> <span class=pl-c1>=</span> <span class=pl-s>&quot;X&quot;</span></td>
       </tr>
       <tr>
         <td id="L28" class="blob-num js-line-number" data-line-number="28"></td>
-        <td id="LC28" class="blob-code blob-code-inner js-file-line">
-</td>
+        <td id="LC28" class="blob-code blob-code-inner js-file-line">    <span class=pl-k>else</span> <span class=pl-c1>@board</span><span class=pl-kos>[</span><span class=pl-s1>insert</span><span class=pl-kos>]</span> <span class=pl-c1>=</span> <span class=pl-s>&quot;O&quot;</span></td>
       </tr>
       <tr>
         <td id="L29" class="blob-num js-line-number" data-line-number="29"></td>
-        <td id="LC29" class="blob-code blob-code-inner js-file-line">
-</td>
+        <td id="LC29" class="blob-code blob-code-inner js-file-line">    <span class=pl-k>end</span></td>
       </tr>
       <tr>
         <td id="L30" class="blob-num js-line-number" data-line-number="30"></td>
-        <td id="LC30" class="blob-code blob-code-inner js-file-line">
-</td>
+        <td id="LC30" class="blob-code blob-code-inner js-file-line">		<span class=pl-en>board</span></td>
       </tr>
       <tr>
         <td id="L31" class="blob-num js-line-number" data-line-number="31"></td>
-        <td id="LC31" class="blob-code blob-code-inner js-file-line">
-</td>
+        <td id="LC31" class="blob-code blob-code-inner js-file-line">    <span class=pl-c1>@count_turn</span> += <span class=pl-c1>1</span></td>
       </tr>
       <tr>
         <td id="L32" class="blob-num js-line-number" data-line-number="32"></td>
-        <td id="LC32" class="blob-code blob-code-inner js-file-line">    <span class=pl-c>#TO DO : méthode faisant appelle aux méthodes des autres classes (notamment à l&#39;instance de Board). Elle affiche le plateau, demande au joueur ce qu&#39;il joue, vérifie si un joueur a gagné, passe au joueur suivant si la partie n&#39;est pas finie.</span></td>
+        <td id="LC32" class="blob-code blob-code-inner js-file-line">    <span class=pl-en>puts</span> <span class=pl-c1>@count_turn</span></td>
       </tr>
       <tr>
         <td id="L33" class="blob-num js-line-number" data-line-number="33"></td>
-        <td id="LC33" class="blob-code blob-code-inner js-file-line">     <span class=pl-s1>round</span> <span class=pl-c1>=</span> <span class=pl-c1>0</span> </td>
+        <td id="LC33" class="blob-code blob-code-inner js-file-line">    </td>
       </tr>
       <tr>
         <td id="L34" class="blob-num js-line-number" data-line-number="34"></td>
-        <td id="LC34" class="blob-code blob-code-inner js-file-line">     </td>
+        <td id="LC34" class="blob-code blob-code-inner js-file-line">    <span class=pl-k>if</span> <span class=pl-en>count_turn</span> % <span class=pl-c1>2</span> == <span class=pl-c1>0</span></td>
       </tr>
       <tr>
         <td id="L35" class="blob-num js-line-number" data-line-number="35"></td>
-        <td id="LC35" class="blob-code blob-code-inner js-file-line">     	<span class=pl-k>while</span> <span class=pl-s1>round</span> &lt;= <span class=pl-c1>9</span></td>
+        <td id="LC35" class="blob-code blob-code-inner js-file-line">      <span class=pl-en>puts</span> <span class=pl-s>&quot; Player 1 à toi de jouer !&quot;</span></td>
       </tr>
       <tr>
         <td id="L36" class="blob-num js-line-number" data-line-number="36"></td>
-        <td id="LC36" class="blob-code blob-code-inner js-file-line">        	<span class=pl-s1>test</span><span class=pl-kos>.</span><span class=pl-en>play_turn</span></td>
+        <td id="LC36" class="blob-code blob-code-inner js-file-line">    <span class=pl-k>else</span> <span class=pl-en>puts</span> <span class=pl-s>&quot;Player 2 à toi de jouer !&quot;</span></td>
       </tr>
       <tr>
         <td id="L37" class="blob-num js-line-number" data-line-number="37"></td>
-        <td id="LC37" class="blob-code blob-code-inner js-file-line">        	<span class=pl-k>if</span> <span class=pl-s1>test</span><span class=pl-kos>.</span><span class=pl-en>victory?</span> </td>
+        <td id="LC37" class="blob-code blob-code-inner js-file-line">    <span class=pl-k>end</span></td>
       </tr>
       <tr>
         <td id="L38" class="blob-num js-line-number" data-line-number="38"></td>
-        <td id="LC38" class="blob-code blob-code-inner js-file-line">        		<span class=pl-k>break</span> </td>
+        <td id="LC38" class="blob-code blob-code-inner js-file-line">	<span class=pl-k>end</span></td>
       </tr>
       <tr>
         <td id="L39" class="blob-num js-line-number" data-line-number="39"></td>
-        <td id="LC39" class="blob-code blob-code-inner js-file-line">        	<span class=pl-k>else</span> <span class=pl-s1>test</span><span class=pl-kos>.</span><span class=pl-en>play_turn</span></td>
+        <td id="LC39" class="blob-code blob-code-inner js-file-line">
+</td>
       </tr>
       <tr>
         <td id="L40" class="blob-num js-line-number" data-line-number="40"></td>
-        <td id="LC40" class="blob-code blob-code-inner js-file-line">        	<span class=pl-s1>round</span> <span class=pl-c1>=</span> <span class=pl-s1>round</span> +<span class=pl-c1>1</span>	</td>
+        <td id="LC40" class="blob-code blob-code-inner js-file-line">  <span class=pl-k>def</span> <span class=pl-en>victory?</span></td>
       </tr>
       <tr>
         <td id="L41" class="blob-num js-line-number" data-line-number="41"></td>
-        <td id="LC41" class="blob-code blob-code-inner js-file-line">        	<span class=pl-k>end</span>	</td>
+        <td id="LC41" class="blob-code blob-code-inner js-file-line">    <span class=pl-c>#TO DO : une méthode qui vérifie le plateau et indique s&#39;il y a un vainqueur ou match nul</span></td>
       </tr>
       <tr>
         <td id="L42" class="blob-num js-line-number" data-line-number="42"></td>
-        <td id="LC42" class="blob-code blob-code-inner js-file-line">      <span class=pl-k>end</span></td>
+        <td id="LC42" class="blob-code blob-code-inner js-file-line">    <span class=pl-c># Il y a 8 combinaisons gagnantes</span></td>
       </tr>
       <tr>
         <td id="L43" class="blob-num js-line-number" data-line-number="43"></td>
-        <td id="LC43" class="blob-code blob-code-inner js-file-line">
-</td>
+        <td id="LC43" class="blob-code blob-code-inner js-file-line">    <span class=pl-k>if</span> <span class=pl-c1>@board</span><span class=pl-kos>[</span><span class=pl-s>&quot;A1&quot;</span><span class=pl-kos>]</span> == <span class=pl-s>&quot;X&quot;</span> &amp;&amp; <span class=pl-c1>@board</span><span class=pl-kos>[</span><span class=pl-s>&quot;A2&quot;</span><span class=pl-kos>]</span> == <span class=pl-s>&quot;X&quot;</span> &amp;&amp; <span class=pl-c1>@board</span><span class=pl-kos>[</span><span class=pl-s>&quot;A3&quot;</span><span class=pl-kos>]</span> == <span class=pl-s>&quot;X&quot;</span> || <span class=pl-c1>@board</span><span class=pl-kos>[</span><span class=pl-s>&quot;B1&quot;</span><span class=pl-kos>]</span> == <span class=pl-s>&quot;X&quot;</span> &amp;&amp; <span class=pl-c1>@board</span><span class=pl-kos>[</span><span class=pl-s>&quot;B2&quot;</span><span class=pl-kos>]</span> == <span class=pl-s>&quot;X&quot;</span> &amp;&amp; <span class=pl-c1>@board</span><span class=pl-kos>[</span><span class=pl-s>&quot;B3&quot;</span><span class=pl-kos>]</span> == <span class=pl-s>&quot;X&quot;</span> || <span class=pl-c1>@board</span><span class=pl-kos>[</span><span class=pl-s>&quot;C1&quot;</span><span class=pl-kos>]</span> == <span class=pl-s>&quot;X&quot;</span> &amp;&amp; <span class=pl-c1>@board</span><span class=pl-kos>[</span><span class=pl-s>&quot;C2&quot;</span><span class=pl-kos>]</span> == <span class=pl-s>&quot;X&quot;</span> &amp;&amp; <span class=pl-c1>@board</span><span class=pl-kos>[</span><span class=pl-s>&quot;C3&quot;</span><span class=pl-kos>]</span> == <span class=pl-s>&quot;X&quot;</span> || <span class=pl-c1>@board</span><span class=pl-kos>[</span><span class=pl-s>&quot;A1&quot;</span><span class=pl-kos>]</span> == <span class=pl-s>&quot;X&quot;</span> &amp;&amp; <span class=pl-c1>@board</span><span class=pl-kos>[</span><span class=pl-s>&quot;B1&quot;</span><span class=pl-kos>]</span> == <span class=pl-s>&quot;X&quot;</span> &amp;&amp; <span class=pl-c1>@board</span><span class=pl-kos>[</span><span class=pl-s>&quot;C1&quot;</span><span class=pl-kos>]</span> == <span class=pl-s>&quot;X&quot;</span> ||</td>
       </tr>
       <tr>
         <td id="L44" class="blob-num js-line-number" data-line-number="44"></td>
-        <td id="LC44" class="blob-code blob-code-inner js-file-line">
-</td>
+        <td id="LC44" class="blob-code blob-code-inner js-file-line">			<span class=pl-c1>@board</span><span class=pl-kos>[</span><span class=pl-s>&quot;A2&quot;</span><span class=pl-kos>]</span> == <span class=pl-s>&quot;X&quot;</span> &amp;&amp; <span class=pl-c1>@board</span><span class=pl-kos>[</span><span class=pl-s>&quot;B2&quot;</span><span class=pl-kos>]</span> == <span class=pl-s>&quot;X&quot;</span> &amp;&amp; <span class=pl-c1>@board</span><span class=pl-kos>[</span><span class=pl-s>&quot;C2&quot;</span><span class=pl-kos>]</span> == <span class=pl-s>&quot;X&quot;</span> || <span class=pl-c1>@board</span><span class=pl-kos>[</span><span class=pl-s>&quot;A3&quot;</span><span class=pl-kos>]</span> == <span class=pl-s>&quot;X&quot;</span> &amp;&amp; <span class=pl-c1>@board</span><span class=pl-kos>[</span><span class=pl-s>&quot;B3&quot;</span><span class=pl-kos>]</span> == <span class=pl-s>&quot;X&quot;</span> &amp;&amp; <span class=pl-c1>@board</span><span class=pl-kos>[</span><span class=pl-s>&quot;C3&quot;</span><span class=pl-kos>]</span> == <span class=pl-s>&quot;X&quot;</span> || <span class=pl-c1>@board</span><span class=pl-kos>[</span><span class=pl-s>&quot;A1&quot;</span><span class=pl-kos>]</span> == <span class=pl-s>&quot;X&quot;</span> &amp;&amp; <span class=pl-c1>@board</span><span class=pl-kos>[</span><span class=pl-s>&quot;B2&quot;</span><span class=pl-kos>]</span> == <span class=pl-s>&quot;X&quot;</span> &amp;&amp; <span class=pl-c1>@board</span><span class=pl-kos>[</span><span class=pl-s>&quot;C3&quot;</span><span class=pl-kos>]</span> == <span class=pl-s>&quot;X&quot;</span> || <span class=pl-c1>@board</span><span class=pl-kos>[</span><span class=pl-s>&quot;A3&quot;</span><span class=pl-kos>]</span> == <span class=pl-s>&quot;X&quot;</span> &amp;&amp; <span class=pl-c1>@board</span><span class=pl-kos>[</span><span class=pl-s>&quot;B2&quot;</span><span class=pl-kos>]</span> == <span class=pl-s>&quot;X&quot;</span> &amp;&amp; <span class=pl-c1>@board</span><span class=pl-kos>[</span><span class=pl-s>&quot;C1&quot;</span><span class=pl-kos>]</span> == <span class=pl-s>&quot;X&quot;</span>    </td>
       </tr>
       <tr>
         <td id="L45" class="blob-num js-line-number" data-line-number="45"></td>
-        <td id="LC45" class="blob-code blob-code-inner js-file-line"><span class=pl-c>#Application.new.perform</span></td>
+        <td id="LC45" class="blob-code blob-code-inner js-file-line">    	<span class=pl-en>puts</span> <span class=pl-s>&quot;Bravo Joueur 1 ! Tu as gagné !! Par contre Joueur 2, t&#39;es nul.&quot;</span></td>
       </tr>
       <tr>
         <td id="L46" class="blob-num js-line-number" data-line-number="46"></td>
-        <td id="LC46" class="blob-code blob-code-inner js-file-line">
+        <td id="LC46" class="blob-code blob-code-inner js-file-line">    	<span class=pl-c1>@status</span> <span class=pl-c1>=</span> <span class=pl-s>&quot;endgame&quot;</span>   </td>
+      </tr>
+      <tr>
+        <td id="L47" class="blob-num js-line-number" data-line-number="47"></td>
+        <td id="LC47" class="blob-code blob-code-inner js-file-line">    <span class=pl-k>elsif</span> <span class=pl-c1>@board</span><span class=pl-kos>[</span><span class=pl-s>&quot;A1&quot;</span><span class=pl-kos>]</span> == <span class=pl-s>&quot;O&quot;</span> &amp;&amp; <span class=pl-c1>@board</span><span class=pl-kos>[</span><span class=pl-s>&quot;A2&quot;</span><span class=pl-kos>]</span> == <span class=pl-s>&quot;O&quot;</span> &amp;&amp; <span class=pl-c1>@board</span><span class=pl-kos>[</span><span class=pl-s>&quot;A3&quot;</span><span class=pl-kos>]</span> == <span class=pl-s>&quot;O&quot;</span> || <span class=pl-c1>@board</span><span class=pl-kos>[</span><span class=pl-s>&quot;B1&quot;</span><span class=pl-kos>]</span> == <span class=pl-s>&quot;O&quot;</span> &amp;&amp; <span class=pl-c1>@board</span><span class=pl-kos>[</span><span class=pl-s>&quot;B2&quot;</span><span class=pl-kos>]</span> == <span class=pl-s>&quot;O&quot;</span> &amp;&amp; <span class=pl-c1>@board</span><span class=pl-kos>[</span><span class=pl-s>&quot;B3&quot;</span><span class=pl-kos>]</span> == <span class=pl-s>&quot;O&quot;</span> || <span class=pl-c1>@board</span><span class=pl-kos>[</span><span class=pl-s>&quot;C1&quot;</span><span class=pl-kos>]</span> == <span class=pl-s>&quot;O&quot;</span> &amp;&amp; <span class=pl-c1>@board</span><span class=pl-kos>[</span><span class=pl-s>&quot;C2&quot;</span><span class=pl-kos>]</span> == <span class=pl-s>&quot;O&quot;</span> &amp;&amp; <span class=pl-c1>@board</span><span class=pl-kos>[</span><span class=pl-s>&quot;C3&quot;</span><span class=pl-kos>]</span> == <span class=pl-s>&quot;O&quot;</span> || <span class=pl-c1>@board</span><span class=pl-kos>[</span><span class=pl-s>&quot;A1&quot;</span><span class=pl-kos>]</span> == <span class=pl-s>&quot;O&quot;</span> &amp;&amp; <span class=pl-c1>@board</span><span class=pl-kos>[</span><span class=pl-s>&quot;B1&quot;</span><span class=pl-kos>]</span> == <span class=pl-s>&quot;O&quot;</span> &amp;&amp; <span class=pl-c1>@board</span><span class=pl-kos>[</span><span class=pl-s>&quot;C1&quot;</span><span class=pl-kos>]</span> == <span class=pl-s>&quot;O&quot;</span> ||</td>
+      </tr>
+      <tr>
+        <td id="L48" class="blob-num js-line-number" data-line-number="48"></td>
+        <td id="LC48" class="blob-code blob-code-inner js-file-line">      <span class=pl-c1>@board</span><span class=pl-kos>[</span><span class=pl-s>&quot;A2&quot;</span><span class=pl-kos>]</span> == <span class=pl-s>&quot;O&quot;</span> &amp;&amp; <span class=pl-c1>@board</span><span class=pl-kos>[</span><span class=pl-s>&quot;B2&quot;</span><span class=pl-kos>]</span> == <span class=pl-s>&quot;O&quot;</span> &amp;&amp; <span class=pl-c1>@board</span><span class=pl-kos>[</span><span class=pl-s>&quot;C2&quot;</span><span class=pl-kos>]</span> == <span class=pl-s>&quot;O&quot;</span> || <span class=pl-c1>@board</span><span class=pl-kos>[</span><span class=pl-s>&quot;A3&quot;</span><span class=pl-kos>]</span> == <span class=pl-s>&quot;O&quot;</span> &amp;&amp; <span class=pl-c1>@board</span><span class=pl-kos>[</span><span class=pl-s>&quot;B3&quot;</span><span class=pl-kos>]</span> == <span class=pl-s>&quot;O&quot;</span> &amp;&amp; <span class=pl-c1>@board</span><span class=pl-kos>[</span><span class=pl-s>&quot;C3&quot;</span><span class=pl-kos>]</span> == <span class=pl-s>&quot;O&quot;</span> || <span class=pl-c1>@board</span><span class=pl-kos>[</span><span class=pl-s>&quot;A1&quot;</span><span class=pl-kos>]</span> == <span class=pl-s>&quot;O&quot;</span> &amp;&amp; <span class=pl-c1>@board</span><span class=pl-kos>[</span><span class=pl-s>&quot;B2&quot;</span><span class=pl-kos>]</span> == <span class=pl-s>&quot;O&quot;</span> &amp;&amp; <span class=pl-c1>@board</span><span class=pl-kos>[</span><span class=pl-s>&quot;C3&quot;</span><span class=pl-kos>]</span> == <span class=pl-s>&quot;O&quot;</span> || <span class=pl-c1>@board</span><span class=pl-kos>[</span><span class=pl-s>&quot;A3&quot;</span><span class=pl-kos>]</span> == <span class=pl-s>&quot;O&quot;</span> &amp;&amp; <span class=pl-c1>@board</span><span class=pl-kos>[</span><span class=pl-s>&quot;B2&quot;</span><span class=pl-kos>]</span> == <span class=pl-s>&quot;O&quot;</span> &amp;&amp; <span class=pl-c1>@board</span><span class=pl-kos>[</span><span class=pl-s>&quot;C1&quot;</span><span class=pl-kos>]</span> == <span class=pl-s>&quot;O&quot;</span> </td>
+      </tr>
+      <tr>
+        <td id="L49" class="blob-num js-line-number" data-line-number="49"></td>
+        <td id="LC49" class="blob-code blob-code-inner js-file-line">    	<span class=pl-en>puts</span> <span class=pl-s>&quot;Bravo Joueur 2 ! Tu as gagné !! Par contre Joueur 1, t&#39;es nul.&quot;</span> </td>
+      </tr>
+      <tr>
+        <td id="L50" class="blob-num js-line-number" data-line-number="50"></td>
+        <td id="LC50" class="blob-code blob-code-inner js-file-line">    	<span class=pl-c1>@status</span> <span class=pl-c1>=</span> <span class=pl-s>&quot;endgame&quot;</span>     </td>
+      </tr>
+      <tr>
+        <td id="L51" class="blob-num js-line-number" data-line-number="51"></td>
+        <td id="LC51" class="blob-code blob-code-inner js-file-line">    <span class=pl-k>end</span></td>
+      </tr>
+      <tr>
+        <td id="L52" class="blob-num js-line-number" data-line-number="52"></td>
+        <td id="LC52" class="blob-code blob-code-inner js-file-line">    <span class=pl-c>#puts &quot;Match nul, aucun gagnant&quot; </span></td>
+      </tr>
+      <tr>
+        <td id="L53" class="blob-num js-line-number" data-line-number="53"></td>
+        <td id="LC53" class="blob-code blob-code-inner js-file-line">  <span class=pl-k>end</span></td>
+      </tr>
+      <tr>
+        <td id="L54" class="blob-num js-line-number" data-line-number="54"></td>
+        <td id="LC54" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="L55" class="blob-num js-line-number" data-line-number="55"></td>
+        <td id="LC55" class="blob-code blob-code-inner js-file-line">  <span class=pl-k>def</span> <span class=pl-en>board</span></td>
+      </tr>
+      <tr>
+        <td id="L56" class="blob-num js-line-number" data-line-number="56"></td>
+        <td id="LC56" class="blob-code blob-code-inner js-file-line">	<span class=pl-en>puts</span> <span class=pl-s>&quot; <span class=pl-s1><span class=pl-kos>#{</span><span class=pl-c1>@board</span><span class=pl-kos>[</span><span class=pl-s>&quot;A1&quot;</span><span class=pl-kos>]</span><span class=pl-kos>}</span></span> | <span class=pl-s1><span class=pl-kos>#{</span><span class=pl-c1>@board</span><span class=pl-kos>[</span><span class=pl-s>&quot;A2&quot;</span><span class=pl-kos>]</span><span class=pl-kos>}</span></span> | <span class=pl-s1><span class=pl-kos>#{</span><span class=pl-c1>@board</span><span class=pl-kos>[</span><span class=pl-s>&quot;A3&quot;</span><span class=pl-kos>]</span><span class=pl-kos>}</span></span> &quot;</span>     </td>
+      </tr>
+      <tr>
+        <td id="L57" class="blob-num js-line-number" data-line-number="57"></td>
+        <td id="LC57" class="blob-code blob-code-inner js-file-line">	<span class=pl-en>puts</span> <span class=pl-s>&quot;-----------&quot;</span>     </td>
+      </tr>
+      <tr>
+        <td id="L58" class="blob-num js-line-number" data-line-number="58"></td>
+        <td id="LC58" class="blob-code blob-code-inner js-file-line">	<span class=pl-en>puts</span> <span class=pl-s>&quot; <span class=pl-s1><span class=pl-kos>#{</span><span class=pl-c1>@board</span><span class=pl-kos>[</span><span class=pl-s>&quot;B1&quot;</span><span class=pl-kos>]</span><span class=pl-kos>}</span></span> | <span class=pl-s1><span class=pl-kos>#{</span><span class=pl-c1>@board</span><span class=pl-kos>[</span><span class=pl-s>&quot;B2&quot;</span><span class=pl-kos>]</span><span class=pl-kos>}</span></span> | <span class=pl-s1><span class=pl-kos>#{</span><span class=pl-c1>@board</span><span class=pl-kos>[</span><span class=pl-s>&quot;B3&quot;</span><span class=pl-kos>]</span><span class=pl-kos>}</span></span> &quot;</span>     </td>
+      </tr>
+      <tr>
+        <td id="L59" class="blob-num js-line-number" data-line-number="59"></td>
+        <td id="LC59" class="blob-code blob-code-inner js-file-line">	<span class=pl-en>puts</span> <span class=pl-s>&quot;-----------&quot;</span>     </td>
+      </tr>
+      <tr>
+        <td id="L60" class="blob-num js-line-number" data-line-number="60"></td>
+        <td id="LC60" class="blob-code blob-code-inner js-file-line">	<span class=pl-en>puts</span> <span class=pl-s>&quot; <span class=pl-s1><span class=pl-kos>#{</span><span class=pl-c1>@board</span><span class=pl-kos>[</span><span class=pl-s>&quot;C1&quot;</span><span class=pl-kos>]</span><span class=pl-kos>}</span></span> | <span class=pl-s1><span class=pl-kos>#{</span><span class=pl-c1>@board</span><span class=pl-kos>[</span><span class=pl-s>&quot;C2&quot;</span><span class=pl-kos>]</span><span class=pl-kos>}</span></span> | <span class=pl-s1><span class=pl-kos>#{</span><span class=pl-c1>@board</span><span class=pl-kos>[</span><span class=pl-s>&quot;C3&quot;</span><span class=pl-kos>]</span><span class=pl-kos>}</span></span> &quot;</span> </td>
+      </tr>
+      <tr>
+        <td id="L61" class="blob-num js-line-number" data-line-number="61"></td>
+        <td id="LC61" class="blob-code blob-code-inner js-file-line">  	</td>
+      </tr>
+      <tr>
+        <td id="L62" class="blob-num js-line-number" data-line-number="62"></td>
+        <td id="LC62" class="blob-code blob-code-inner js-file-line">  <span class=pl-k>end</span></td>
+      </tr>
+      <tr>
+        <td id="L63" class="blob-num js-line-number" data-line-number="63"></td>
+        <td id="LC63" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="L64" class="blob-num js-line-number" data-line-number="64"></td>
+        <td id="LC64" class="blob-code blob-code-inner js-file-line"><span class=pl-k>end</span></td>
+      </tr>
+      <tr>
+        <td id="L65" class="blob-num js-line-number" data-line-number="65"></td>
+        <td id="LC65" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="L66" class="blob-num js-line-number" data-line-number="66"></td>
+        <td id="LC66" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="L67" class="blob-num js-line-number" data-line-number="67"></td>
+        <td id="LC67" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="L68" class="blob-num js-line-number" data-line-number="68"></td>
+        <td id="LC68" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="L69" class="blob-num js-line-number" data-line-number="69"></td>
+        <td id="LC69" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="L70" class="blob-num js-line-number" data-line-number="70"></td>
+        <td id="LC70" class="blob-code blob-code-inner js-file-line">
 </td>
       </tr>
 </table>
@@ -1418,7 +1480,7 @@
             Copy permalink
           </clipboard-copy>
         </li>
-        <li><a class="dropdown-item js-update-url-with-hash" id="js-view-git-blame" role="menuitem" href="/FatoumaKara/projet_morpion/blame/633d8dd08ba6b9964aa9191154f043fd7609791c/app.rb">View git blame</a></li>
+        <li><a class="dropdown-item js-update-url-with-hash" id="js-view-git-blame" role="menuitem" href="/FatoumaKara/projet_morpion/blame/633d8dd08ba6b9964aa9191154f043fd7609791c/lib/board.rb">View git blame</a></li>
           <li><a class="dropdown-item" id="js-new-issue" role="menuitem" href="/FatoumaKara/projet_morpion/issues/new">Reference in new issue</a></li>
       </ul>
     </details-menu>
@@ -1444,10 +1506,10 @@
      hidden
      data-tagsearch-url="/FatoumaKara/projet_morpion/find-definition"
      data-tagsearch-ref="master"
-     data-tagsearch-path="app.rb"
+     data-tagsearch-path="lib/board.rb"
      data-tagsearch-lang="Ruby"
-     data-hydro-click="{&quot;event_type&quot;:&quot;code_navigation.click_on_symbol&quot;,&quot;payload&quot;:{&quot;action&quot;:&quot;click_on_symbol&quot;,&quot;repository_id&quot;:281940588,&quot;ref&quot;:&quot;master&quot;,&quot;language&quot;:&quot;Ruby&quot;,&quot;originating_url&quot;:&quot;https://github.com/FatoumaKara/projet_morpion/blob/master/app.rb&quot;,&quot;user_id&quot;:55764727}}"
-     data-hydro-click-hmac="e4b3cba7fef1cab462c6cf283c156168712632ec214991a23d95d11514513e0c">
+     data-hydro-click="{&quot;event_type&quot;:&quot;code_navigation.click_on_symbol&quot;,&quot;payload&quot;:{&quot;action&quot;:&quot;click_on_symbol&quot;,&quot;repository_id&quot;:281940588,&quot;ref&quot;:&quot;master&quot;,&quot;language&quot;:&quot;Ruby&quot;,&quot;originating_url&quot;:&quot;https://github.com/FatoumaKara/projet_morpion/blob/master/lib/board.rb&quot;,&quot;user_id&quot;:55764727}}"
+     data-hydro-click-hmac="29d6a24f5e853aa3d9dec86e1aed9083fea22a0b4942c0598a8b98f0e953d7ba">
   <div class="Popover-message Popover-message--large Popover-message--top-left TagsearchPopover mt-1 mb-4 mx-auto Box box-shadow-large">
     <div class="TagsearchPopover-content js-tagsearch-popover-content overflow-auto" style="will-change:transform;">
     </div>
